@@ -1,0 +1,199 @@
+{
+    "key": "group_67192f6413c29",
+    "title": "Options: Header Footer Scripts",
+    "fields": [
+        {
+            "key": "field_6984cc3585843",
+            "label": "Header Footer Scripts: Scripts",
+            "name": "header_footer_scripts-_scripts",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_6984cc5285844",
+            "button_label": "Add Script",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6984cc5285844",
+                    "label": "Header Footer Scripts: Script Name",
+                    "name": "header_footer_scripts-_script_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6984cc3585843"
+                },
+                {
+                    "key": "field_6984cc7185845",
+                    "label": "Header Footer Scripts: Script Location",
+                    "name": "header_footer_scripts-_script_location",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Where in the markup will this script appear.<\/br>\r\nCheck instructions on platform.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "header": "Header",
+                        "footer": "Footer",
+                        "body": "Under Body Tag"
+                    },
+                    "default_value": "header",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_6984cc3585843"
+                },
+                {
+                    "key": "field_6984cc9d85846",
+                    "label": "Header Footer Scripts: Script Page Locations",
+                    "name": "header_footer_scripts-_script_page_locations",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Will this script appear on all pages or just specific pages.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All Pages",
+                        "specific": "Specific Pages"
+                    },
+                    "default_value": "all",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_6984cc3585843"
+                },
+                {
+                    "key": "field_6984ccf785847",
+                    "label": "Header Footer Scripts: Specific Pages Selection",
+                    "name": "header_footer_scripts-_specific_pages",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Choose what pages this script will appear on.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6984cc9d85846",
+                                "operator": "==",
+                                "value": "specific"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "object",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6984cc3585843"
+                },
+                {
+                    "key": "field_6984cd64a285d",
+                    "label": "Header Footer Scripts: Script",
+                    "name": "header_footer_scripts-_script",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Copy and paste your script code here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6984cc9d85846",
+                                "operator": "==",
+                                "value": "specific"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 6,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_6984cc3585843"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-header-footer-scripts"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1771031211
+}

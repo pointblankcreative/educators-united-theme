@@ -1,0 +1,40 @@
+/*Custom Styles for the gutenberg*/
+/*Outline the container block*/
+.container,
+.wp-block-columns, .block-core-columns,
+.InfoCardBlock, 
+.EmbedPopupBlock,
+.PopupBlock,
+.PopupContentBox,
+.TextAlignmentContainerBlock,
+.PDFEmbedBlock,
+.VisibilityContainerBlock,
+.FlexContainerBlock,
+.MaxWidthContainer,
+.MaxWidthContainerInner,
+.ScrollIntoViewContainer,
+.ReadMoreBlock,
+.AccordionBlock,
+.AccordionItem,
+.FeaturedContentBlockV1,
+.FeaturedContentBlockV2,
+.wp-block-group
+{
+    border: 1px dashed black;
+    padding: 8px;
+}
+
+
+/*Ouline the spacer block*/
+.wp-block-spacer{
+    border: 1px dotted black;
+    background-color: rgba(red, 0.6);
+}
+
+.InfoCardBlock{
+    border-radius: 5px;
+} 
+
+.PopupContentBox{
+    background-color: white;
+}

@@ -1,0 +1,18 @@
+{
+    "name": "acf/share-buttons-block",
+    "title": "Share Buttons Block",
+    "description": "This is custom block that allows the user to share a link and message on social media.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "share-buttons-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "editorStyle": [ 
+        "share_buttons"
+    ],
+    "category": "acfp-blocks",
+    "icon": "share-alt2",
+    "keywords": ["share", "button", "buttons", "block", "social", "facebook", "twitter", "linkedin", "email"]
+}

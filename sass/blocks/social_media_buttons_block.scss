@@ -1,0 +1,63 @@
+// Podfont icon uses same structure as podfonts.css (.pf base + :before content).
+// SVG fonts are unsupported in Chrome/Edge, so we use the Podfont SVG as a mask instead of the webfont.
+@mixin sm_icon_styles($SMPlatform, $FontFamily, $FontCode){
+    .#{$SMPlatform}{
+        &:before{
+            font-family: $FontFamily; 
+            content: $FontCode; 
+        }
+    }
+}
+
+.SocialButtons{
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    a{
+        transition: 300ms;
+        border-radius: 30px !important; 
+        width: 38px !important;
+        padding: 10px 19px !important;
+        font-size: 18px !important;
+        border-width: 2px !important;
+
+        &:hover{
+            background-color: transparent;
+
+            &:before{
+                color: white;
+            }
+        }
+    }
+
+    // Brand icons
+    @include sm_icon_styles("Facebook",  "Font Awesome 5 Brands", "\f39e");
+    @include sm_icon_styles("Twitter",   "Font Awesome 5 Brands", "\e61b");
+    @include sm_icon_styles("Bluesky",   "Font Awesome 5 Brands", "\e671");
+    @include sm_icon_styles("Instagram", "Font Awesome 5 Brands", "\f16d");
+    @include sm_icon_styles("Youtube",   "Font Awesome 5 Brands", "\f167");
+    @include sm_icon_styles("Vimeo",     "Font Awesome 5 Brands", "\f27d");
+    @include sm_icon_styles("LinkedIn",  "Font Awesome 5 Brands", "\f0e1");
+    @include sm_icon_styles("TikTok",    "Font Awesome 5 Brands", "\e07b");
+    @include sm_icon_styles("RSS",    "Font Awesome 5 Free", "\f09e");
+
+    @include sm_icon_styles("ApplePodcast",    "Font Awesome 7 Free", "\f2ce");
+    @include sm_icon_styles("Soundcloud",    "Font Awesome 5 Brands", "\f1be");
+    @include sm_icon_styles("Spotify",    "Font Awesome 5 Brands", "\f1bc");
+
+    // Google Podcasts – same as podfonts.css lines 168–170 (.pf-a-google-podcasts:before)
+    // Font loads from Podfont CDN (enqueued as dependency of this block)
+    .GooglePodcast {
+        font-family: 'PodFonts-Mono' !important; // same as .pf
+        &:before {
+            content: "\e95a"; // same as .pf-a-google-podcasts:before
+        }
+    }
+
+    // Utility icons
+    @include sm_icon_styles("Phone", "Font Awesome 5 Free", "\f095");
+    @include sm_icon_styles("Email", "Font Awesome 5 Free", "\f0e0");
+
+    .Phone{
+        font-weight: 900;
+    }
+}

@@ -1,0 +1,22 @@
+@use "../variables/breakpoints" as breakpoint;
+
+.SectionBanner{
+    height: auto;
+    width: 100%;
+    .BannerTextButtonContent{
+        height: 100%;
+        min-height: 500px;
+        padding: 155px 0 75px 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    @include breakpoint.media-down(md) {
+        min-height: 350px;
+    }
+}
+
+.NoBannerClass{
+    padding-top: 140px;
+}

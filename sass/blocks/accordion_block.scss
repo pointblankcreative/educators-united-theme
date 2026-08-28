@@ -1,0 +1,50 @@
+@use "../variables/main_colours" as colours;
+
+@mixin accordion_styles($ColourName, $ButtonBGColour, $ButtonTextColour){
+    &.#{$ColourName}{
+        .accordion-button{
+            background-color: $ButtonBGColour !important;
+            color: $ButtonTextColour !important;
+        }
+    }
+}
+
+.accordion {
+    .accordion-item{
+        margin-bottom: 10px;
+        border: none;
+    }
+
+    .accordion-button{
+        color: white;
+
+        &:after{
+            display:none;
+        } 
+
+        span{
+            width: 100%;
+        }
+
+        i{
+            transition: 300ms;
+        }
+
+        &.collapsed i{
+            transition: 300ms;
+            transform: rotate(180deg);
+        }
+    }
+
+    // Base variants
+    @include accordion_styles("dark", colours.$Dark, colours.$Light);
+    @include accordion_styles("light", colours.$Light, colours.$Dark);
+
+    // Contextual variants
+    @include accordion_styles("primary", colours.$Primary, colours.$Light);
+    @include accordion_styles("secondary", colours.$Secondary, colours.$Light);
+    @include accordion_styles("success", colours.$Success, colours.$Light);
+    @include accordion_styles("warning", colours.$Warning, colours.$Dark);
+    @include accordion_styles("danger", colours.$Danger, colours.$Light);
+    
+}

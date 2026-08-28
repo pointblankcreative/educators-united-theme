@@ -1,0 +1,43 @@
+@use '../variables/breakpoints' as breakpoint;
+@use '../variables/font_style_mixins' as fonts;
+@use "../variables/an_form_basic_styling" as form_styles;
+
+
+@include breakpoint.media-up(md) {
+    .widget-wrapper{
+        top:0;
+        position: absolute;
+        .WidgetContainer{
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 10px;
+            margin: auto;
+        }
+    }  
+}
+
+@include breakpoint.media-down(md) {
+    .PageWidget{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        .PageWidgetInner{
+            border-radius: 0;
+        }
+    }
+}
+@include breakpoint.media-up(md) {
+    .widget-container{
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 10px;
+        margin: auto;
+    }
+    .PageWidget{
+        margin-top: -100px;
+        position: absolute; 
+    }
+}
+
+.PageWidget{
+    @include form_styles.form_styling;
+}

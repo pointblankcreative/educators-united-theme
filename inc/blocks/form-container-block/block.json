@@ -1,0 +1,17 @@
+{
+    "name": "acf/form-container-block",
+    "title": "Form Container Block",
+    "description": "A custom container block that can also house a form. Decide if the form appears first in mobile or after the content. Use at the start of the page.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "form-container-block.php"
+    },
+    "supports":{
+        "anchor": true,
+        "align": false,
+        "jsx": true
+    },
+    "category": "acfp-blocks",
+    "icon": "media-document",
+    "keywords": ["section", "container", "form", "embed", "shortcode"]
+}

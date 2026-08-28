@@ -1,0 +1,117 @@
+@use "../variables/main_colours" as colours;
+
+@mixin button-stuff {
+    position: relative;
+    line-height: 1;
+    border-radius: 0px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 700;
+    //font-size: 19px;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center; 
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+@mixin button_background_styles($ButtonColourName, $TextColour, $BGBorderColour, $TextHoverColour, $BGHoverColour){
+    &.#{$ButtonColourName}{
+            color: $TextColour !important;
+            background-color: $BGBorderColour !important;
+            border-color: $BGBorderColour !important;
+            &:before, &:after{
+                color: $TextColour !important;
+            }
+            &:hover, &:focus, &:active{
+                color: $TextHoverColour !important;
+                background-color: $BGHoverColour !important;
+                &:before, &:after{
+                    color: $TextHoverColour !important;
+                }
+            }
+        }
+}
+
+.cta-nav-button{
+    a{
+        @include button-stuff;
+        & {
+            border-width: 4px;
+            border-style: solid;
+            border-color: transparent;
+            padding: 8px 15px;
+            line-height: 1 !important;
+        }
+        &::after{
+            transition: width 0ms ease !important;
+            margin: 0 !important;
+        }
+
+        &:hover{
+            background-color: white !important;
+            &::after{
+                background-color: transparent !important;
+            }
+        }
+    }
+} 
+
+.ThemeButtonWrapper{
+    .wpcf7-form-control{
+        padding: 8px 15px;
+    }
+    .ThemeButton{
+        @include button-stuff;
+        & {
+            transition: 0.3s;
+        }
+
+        &.background{
+            border-width: 4px;
+            border-style: solid;
+            border-color: transparent;
+        }
+        &.background:hover{
+            background-color: white !important;
+        }
+    
+//colours
+        &.background{
+
+            //@include button_background_styles($ButtonColourName, $TextColour, $BGBorderColour, $TextHoverColour, $BGHoverColour);
+
+            @include button_background_styles("dark", colours.$Light, colours.$Dark, colours.$Dark, colours.$Light);
+
+            @include button_background_styles("light", colours.$Dark, colours.$Light, colours.$Light, colours.$Dark);
+
+            @include button_background_styles("primary", colours.$Light, colours.$Primary, colours.$Primary, colours.$Light);
+
+            @include button_background_styles("secondary", colours.$Light, colours.$Secondary, colours.$Secondary, colours.$Light);
+
+            @include button_background_styles("success", colours.$Light, colours.$Success, colours.$Success, colours.$Light);
+            
+            @include button_background_styles("warning", colours.$Dark, colours.$Warning, colours.$Dark, colours.$Light);
+ 
+            @include button_background_styles("danger", colours.$Light, colours.$Danger, colours.$Danger, colours.$Light);
+
+        }
+
+    }
+
+    &.ThemeButtonGroup {
+        a, button{
+            margin: 5px 10px 5px 0; 
+        }
+    }
+}

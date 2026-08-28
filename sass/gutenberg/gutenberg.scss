@@ -1,0 +1,27 @@
+@use "../custom/bg_colours";
+@use "../custom/container"; 
+@use "../custom/helper_classes";
+@use "../custom/wp_separator_colours";
+@use "../custom/text_colours";
+@use "../custom/theme_button_style";
+@use "../custom/theme_image_block";
+
+@use "bootstrap_badge";
+@use "gutenberg_outlines";
+@use "gutenberg_editor";
+@use "misc";     
+@use "slider_gallery";  
+@use "widgets";      
+
+.accordion{
+    .block-list-appender{
+        position: relative;
+        button{
+            width: 100% !important;
+        }
+    }
+} 
+
+.has-light-color{
+    text-shadow: 0px 0px 5px black;
+}

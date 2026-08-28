@@ -1,0 +1,80 @@
+/*
+Basically the same breakpoints as bootstrap however Bootstrap is not built for dart SCSS currently
+
+> how to use
+
+call the breakpoints at the top of your scss file
+@use "../variables/breakpoints" as breakpoint;
+
+@include breakpoint.media-up(md) {
+  .someClass {
+    //scss code here
+  }
+}
+
+@include breakpoint.media-down(sm) {
+  .someClass {
+    //scss code here
+  }
+}
+
+@include breakpoint.media-between(sm, lg) {
+  .someClass {
+    //scss code here
+  }
+}
+*/ 
+
+@use "sass:map";
+
+// Your breakpoint maps
+$grid-min-breakpoints: ( 
+  xs: 0,
+  sm: 481px,
+  md: 782px,
+  lg: 1025px,
+  xl: 1201px,
+  xxl: 1400px
+) !default;
+
+$grid-max-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 781px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1399px
+) !default;
+
+// Mixin for min-width (up)
+@mixin media-up($breakpoint) {
+  $min: map.get($grid-min-breakpoints, $breakpoint);
+  @if $min != null {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+// Mixin for max-width (down)
+@mixin media-down($breakpoint) {
+  $max: map.get($grid-max-breakpoints, $breakpoint);
+  @if $max != null {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+// Mixin for between
+@mixin media-between($lower, $upper) {
+  $min: map.get($grid-min-breakpoints, $lower);
+  $max: map.get($grid-max-breakpoints, $upper);
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+

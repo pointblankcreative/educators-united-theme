@@ -1,0 +1,23 @@
+@use "../variables/main_colours" as colours;    
+
+@mixin separator_colour($SpacerColourName, $SpacerColour) {
+    &.has-#{$SpacerColourName}-color{
+        background-color: $SpacerColour !important;
+    }
+}
+
+.wp-block-separator{
+    margin: 3rem 0;
+    
+    //loops through colours in ../variables/main_colours.
+    //Make sure the colour names match the slug name in inc > globales > global_editor_colours.php
+    @each $name, $value in colours.$theme-colours {
+      @include separator_colour($name, $value);
+    }
+    
+    &.has-background{
+        &:not(.is-style-dots){
+            height: 2px !important;
+        }
+    }
+}

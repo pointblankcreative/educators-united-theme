@@ -1,0 +1,2 @@
+function SetHeight(){var e=window.innerWidth,t=document.getElementsByClassName("ContainerBlock");0<t.length&&(767<e?(e=document.getElementById("Form").offsetHeight,t[0].style.minHeight=(e-=100)+"px"):t[0].style.minHeight="100%")}function delay(){setTimeout(function(){CheckStatus()},200)}document.addEventListener("DOMContentLoaded",function(){CheckStatus()});var Form=document.getElementById("Form");function CheckStatus(){("interactive"!=document.readyState?SetHeight:delay)()}new ResizeObserver(function(){return delay()}).observe(Form);
+//# sourceMappingURL=side_widget.js.map

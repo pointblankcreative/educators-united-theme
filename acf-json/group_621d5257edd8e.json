@@ -1,0 +1,172 @@
+{
+    "key": "group_621d5257edd8e",
+    "title": "Block: Text Alignment Container Block",
+    "fields": [
+        {
+            "key": "field_621d52a0b3985",
+            "label": "Text Alignment Block: Desktop Alignment",
+            "name": "text_alignment_block-_desktop_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621d93e41f811",
+            "label": "Text Alignment Block: Adjust View Alignment",
+            "name": "text_alignment_block-_adjust_view_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "Tablet": "Tablet",
+                "Mobile": "Mobile",
+                "Tablet & Mobile": "Tablet & Mobile"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621d52f3b3987",
+            "label": "Text Alignment Block: Tablet Alignment",
+            "name": "text_alignment_block-_tablet_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621d93e41f811",
+                        "operator": "==",
+                        "value": "Tablet"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621d93e41f811",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621d5313b3989",
+            "label": "Text Alignment Block: Mobile Alignment",
+            "name": "text_alignment_block-_mobile_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621d93e41f811",
+                        "operator": "==",
+                        "value": "Mobile"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621d93e41f811",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/text-alignment-container-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037000
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["glightbox/glightbox_config.js"],"names":["lightbox","GLightbox","touchNavigation"],"mappings":"AACA,IAAIA,SAAWC,UAAU,CAArBD,gBAAWC,CAAAA,EACXC,KAAAA,CAAAA,CAEJ,CAAC","file":"glightbox_config.js","sourcesContent":["\"use strict\";\nvar lightbox = GLightbox({\n    touchNavigation: true,\n    loop: true,\n});"]}

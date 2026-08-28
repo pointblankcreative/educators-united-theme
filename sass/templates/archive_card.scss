@@ -1,0 +1,22 @@
+ .PostsArchive{
+    .PostImage{
+        height: 200px;
+        width: 100%;
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    .PostInfo{
+        background-color: #EEEEEE;
+        .PostTitle a, .ReadMore{
+            transition: 300ms;
+            text-decoration: none !important;
+            &:hover{
+                opacity: 0.7;
+                text-decoration: none !important;
+            }
+        }
+        .Date{
+            font-size: 0.95rem;
+        }
+    }
+ }  

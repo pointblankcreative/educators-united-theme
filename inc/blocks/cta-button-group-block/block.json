@@ -1,0 +1,15 @@
+{
+    "name": "acf/cta-button-group-block",
+    "title": "CTA Button Group Block",
+    "description": "A custom button group block.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cta-button-group-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "category": "acfp-blocks",
+    "icon": "button",
+    "keywords": ["button", "block", "theme", "call", "to", "action", "cta", "group"]
+}

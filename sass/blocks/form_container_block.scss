@@ -1,0 +1,45 @@
+@use "../variables/main_colours" as colours;
+@use "../variables/breakpoints" as breakpoint;
+@use "../variables/an_form_basic_styling" as form;
+
+.FormContainerBlock{
+    .FormSection{
+        background-color: colours.$Dark;
+        .FormTitle{
+            color: colours.$Light;
+        }
+        
+        @include breakpoint.media-up(md) {
+            padding: 1.25rem 1rem 0.75rem;
+            margin-top: -50px;
+            margin-bottom: 50px;
+        }
+        @include breakpoint.media-down(md) {
+            padding: 1.25rem 0 0.75rem; 
+        }
+        @include form.form_styling;
+    }
+    @include breakpoint.media-down(md) {
+        &.container{
+            max-width: 100%;
+            padding:0 !important;
+        }
+    }
+    .FormInnerContainer{
+        
+        @include breakpoint.media-down(md) {
+            max-width: 540px;
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include breakpoint.media-down(sm) {
+            max-width: 100%;
+        }
+    }
+    #Form{
+        position: relative;
+        z-index: 1;
+    }
+}   

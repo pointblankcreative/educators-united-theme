@@ -1,0 +1,11 @@
+@use "../variables/breakpoints" as breakpoint;
+
+main, footer{
+    @include breakpoint.media-down(md) {
+        overflow: hidden; 
+        width: 100%;
+    }
+    .MainContent{
+        position: relative;
+    }
+}  

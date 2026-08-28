@@ -1,0 +1,18 @@
+{
+    "name": "acf/files-block",
+    "title": "Files Block",
+    "description": "A block that will display your files for download.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "files-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "editorStyle": [ 
+        "files_block"
+    ],
+    "category": "acfp-blocks",
+    "icon": "list-view",
+    "keywords": ["pdf", "pdfs", "block", "files", "file"]
+}

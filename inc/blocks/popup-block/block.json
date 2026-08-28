@@ -1,0 +1,20 @@
+{
+    "apiVersion": 2,
+    "name": "acf/popup-block",
+    "title": "Popup Block",
+    "description": "This is custom popup that needs to be paired up with a popup button block in order to work.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "popup-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "editorStyle": [ 
+        "popup"
+    ],
+    "icon": "block-default",
+    "category": "acfp-blocks",
+    "keywords": ["block", "modal", "pop", "popup"]
+}

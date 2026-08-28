@@ -1,0 +1,22 @@
+@use "../variables/main_colours" as colours;
+
+@mixin background_spacer_colour($BGColourName, $BGColour) {
+  .bg-#{$BGColourName},
+  .bg-has-#{$BGColourName}-background-color {
+    background-color: $BGColour !important;
+
+    .wp-block-spacer {
+      background-color: $BGColour !important;
+    }
+  }
+}
+
+//loops through colours in ../variables/main_colours.
+//Make sure the colour names match the slug name in inc > globales > global_editor_colours.php
+@each $name, $value in colours.$theme-colours {
+  @include background_spacer_colour($name, $value);
+}
+
+.bg-trasparent{
+    background-color: transparent !important;
+}

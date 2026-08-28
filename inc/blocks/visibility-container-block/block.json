@@ -1,0 +1,16 @@
+{
+    "name": "acf/visibility-container-block",
+    "title": "Visibility Container Block",
+    "description": "A custom container block that makes items on screen visible only on specific screen sizes.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "visibility-container-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "category": "acfp-blocks",
+    "icon": "visibility",
+    "keywords": ["hide", "visible", "block", "container"]
+}

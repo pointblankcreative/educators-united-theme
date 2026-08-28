@@ -1,0 +1,11 @@
+.wp-block[data-type="core/widget-area"]{
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.blocks-widgets-container .editor-styles-wrapper{
+    max-width: 1200px;
+}
+.wp-block[data-type="core/widget-area"] .components-panel__body-toggle{
+    transform: translateY(0px);
+}

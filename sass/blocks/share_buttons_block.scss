@@ -1,0 +1,43 @@
+$ShareButtonPadding: 12px 30px;
+$ShareButtonMargin: 10px 25px 0 0;
+$ShareButtonMarginLastChild: 10px 0px 0 0;
+
+.ShareButtons{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    a{
+        cursor: pointer;
+        transition: 300ms;     
+        transition-timing-function: ease-in-out;
+        text-decoration: none;
+
+        position: relative;
+        line-height: 1;
+        border-radius: 0px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center; 
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-weight: 700;
+        //font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: $ShareButtonMargin;
+        padding: $ShareButtonPadding;
+        border-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+    }
+    a:last-child{
+        margin: $ShareButtonMarginLastChild;
+    }
+    a:hover, button:hover{
+        opacity: 1;
+    }
+}

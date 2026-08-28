@@ -1,0 +1,46 @@
+{
+    "key": "group_698fd917a6833",
+    "title": "Option: Add Language Toggler?",
+    "fields": [
+        {
+            "key": "field_698fd917b8960",
+            "label": "Add Language Toggler?",
+            "name": "add_language_toggler",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Only turn this on if WPML is installed AND you are not using the Primary Menu. <\/br>\r\nThe reason for this is if the Primary Menu has no items the toggler will not appear; this overrides it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-language-toggler"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037028
+}

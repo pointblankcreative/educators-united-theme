@@ -1,0 +1,19 @@
+{
+    "name": "acf/embed-block",
+    "title": "Embed Block (for Youtube and Vimeo embeds)",
+    "description": "This is embed block that allows you to align left, center, or right (something the built in block does not do well).",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "embed-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "editorStyle": [ 
+        "embed",
+        "video_hover_animations"
+    ],
+    "category": "acfp-blocks",
+    "icon": "format-video",
+    "keywords": ["embed", "iframe", "Block", "youtube", "vimeo"]
+}

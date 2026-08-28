@@ -1,0 +1,20 @@
+@use "../variables/breakpoints" as breakpoint;
+
+@include breakpoint.media-up(md) {
+    /* Ensure all columns are of equal width and height within the row when the 'equal-height' class is applied */
+    .equal-height{
+        display: grid !important;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        div{
+            height: 100%;
+        }
+    }
+}
+  
+@include breakpoint.media-down(md) {
+    .reverse-on-mobile {
+        flex-direction: column-reverse !important;
+        display: flex !important;
+    }
+}

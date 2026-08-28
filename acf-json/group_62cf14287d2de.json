@@ -1,0 +1,389 @@
+{
+    "key": "group_62cf14287d2de",
+    "title": "Block: CTA Button Group Block",
+    "fields": [
+        {
+            "key": "field_62cf14910dc2f",
+            "label": "CTA Button Group Block: Buttons",
+            "name": "cta_button_group_block-_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_62cf153e0dc33",
+                    "label": "Text & Link",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0,
+                    "parent_repeater": "field_62cf14910dc2f"
+                },
+                {
+                    "key": "field_69826c54a2a45",
+                    "label": "CTA Button Group Block: Button Type",
+                    "name": "cta_button_group_block-_button_type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link": "LInk",
+                        "download": "File Download"
+                    },
+                    "default_value": "link",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_62cf14910dc2f",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_62cf15460dc34",
+                    "label": "CTA Button Group Block: Link & Text",
+                    "name": "cta_button_group_block-_link_text",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_69826c54a2a45",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_62cf14910dc2f"
+                },
+                {
+                    "key": "field_69826c79a2a46",
+                    "label": "CTA Button Group Block: File Link",
+                    "name": "cta_button_group_block-_file_link",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_69826c54a2a45",
+                                "operator": "==",
+                                "value": "download"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_62cf14910dc2f"
+                },
+                {
+                    "key": "field_69826c99a2a47",
+                    "label": "CTA Button Group Block: Button Text",
+                    "name": "cta_button_group_block-_button_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_69826c54a2a45",
+                                "operator": "==",
+                                "value": "download"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_62cf14910dc2f"
+                },
+                {
+                    "key": "field_62cf1671978cc",
+                    "label": "Button Colours",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "parent_repeater": "field_62cf14910dc2f",
+                    "selected": 0
+                },
+                {
+                    "key": "field_62cf167c978cd",
+                    "label": "CTA Button Group Block: Button Colour",
+                    "name": "cta_button_group_block-_button_colour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "primary": "Primary",
+                        "secondary": "Secondary",
+                        "dark": "Dark",
+                        "light": "Light",
+                        "success": "Success",
+                        "warning": "Warning",
+                        "danger": "Danger"
+                    },
+                    "default_value": "primary",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_62cf14910dc2f",
+                    "create_options": 0,
+                    "save_options": 0
+                }
+            ]
+        },
+        {
+            "key": "field_62cf174f978d1",
+            "label": "CTA Button Group Block: Desktop Alignment",
+            "name": "cta_button_group_block-_desktop_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": "start",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_62cf176e978d2",
+            "label": "CTA Button Group Block: Adjust View Alignment",
+            "name": "cta_button_group_block-_adjust_view_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Change Alignment at specific view (IE: Tablet)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "Tablet": "Tablet",
+                "Mobile": "Mobile",
+                "Tablet & Mobile": "Tablet & Mobile"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_62cf1784978d3",
+            "label": "CTA Button Group Block: Tablet Alignment",
+            "name": "cta_button_group_block-_tablet_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62cf176e978d2",
+                        "operator": "==",
+                        "value": "Tablet"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_62cf176e978d2",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": "start",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_62cf1793978d4",
+            "label": "CTA Button Group Block: Mobile Alignment",
+            "name": "cta_button_group_block-_mobile_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62cf176e978d2",
+                        "operator": "==",
+                        "value": "Mobile"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_62cf176e978d2",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": "start",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/cta-button-group-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037014
+}

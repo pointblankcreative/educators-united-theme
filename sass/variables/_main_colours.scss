@@ -1,0 +1,21 @@
+@use "sass:map";
+
+// Theme colours as a map (single source of truth). Keys match class names: .bg-primary, .text-primary, etc.
+$theme-colours: (
+  "primary": #2f2f77,
+  "secondary": #ffa500,
+  "success": #198754,
+  "warning": #FFCC00,
+  "danger": #FF4422,
+  "dark": #000000,
+  "light": #ffffff,
+);
+
+// Individual variables (for backward compatibility; derived from map)
+$Primary: map.get($theme-colours, "primary");
+$Secondary: map.get($theme-colours, "secondary");
+$Success: map.get($theme-colours, "success");
+$Warning: map.get($theme-colours, "warning");
+$Danger: map.get($theme-colours, "danger");
+$Dark: map.get($theme-colours, "dark");
+$Light: map.get($theme-colours, "light");

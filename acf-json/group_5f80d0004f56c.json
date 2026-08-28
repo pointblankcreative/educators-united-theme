@@ -1,0 +1,494 @@
+{
+    "key": "group_5f80d0004f56c",
+    "title": "Block: Share Buttons Block",
+    "fields": [
+        {
+            "key": "field_67eaac6bcc700",
+            "label": "Buttons",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_60fad622c29f6",
+            "label": "Share Buttons Block: Share Link",
+            "name": "share_buttons_block-_share_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If empty the share link will be the current page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67eaaccccc701",
+            "label": "Share Buttons Block: Share Buttons",
+            "name": "share_buttons_block-_share_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_67eaace7cc702",
+            "button_label": "Add Button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_69826d19aeda4",
+                    "label": "Share Buttons Block: Share Button ID",
+                    "name": "share_buttons_block-_share_button_id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Set a unique ID to target JS to track button clicks on tracking pixels. <br\/>\r\nMake sure not to have any spaces or special characters.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67eaaccccc701"
+                },
+                {
+                    "key": "field_67eaace7cc702",
+                    "label": "Share Buttons Block: Social Platform",
+                    "name": "share_buttons_block-_social_platform",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "facebook": "Facebook",
+                        "x": "X",
+                        "instagram": "Instagram",
+                        "bluesky": "Bluesky",
+                        "whatsapp": "WhatsApp",
+                        "linkedin": "LinkedIn",
+                        "email": "Email"
+                    },
+                    "default_value": "facebook",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_67eaaccccc701",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_67eaae29cc703",
+                    "label": "Share Buttons Block: Instagram Post Link",
+                    "name": "share_buttons_block-_instagram_post_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "There is no way to share on instagram so instead we need to link to the post we are encouraging the user to share on their account.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "instagram"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_67eaaccccc701"
+                },
+                {
+                    "key": "field_67eaae71cc704",
+                    "label": "Share Buttons Block: Share Message",
+                    "name": "share_buttons_block-_share_message",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "x"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "bluesky"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "whatsapp"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_67eaaccccc701"
+                },
+                {
+                    "key": "field_67eaf377d9bd0",
+                    "label": "Share Buttons Block: Email Subject",
+                    "name": "share_buttons_block-_email_subject",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67eaaccccc701"
+                },
+                {
+                    "key": "field_67eaf3a5d9bd1",
+                    "label": "Share Buttons Block: Email Message",
+                    "name": "share_buttons_block-_email_message",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Please include URL as it will not be automatically added to the email.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67eaace7cc702",
+                                "operator": "==",
+                                "value": "email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_67eaaccccc701"
+                }
+            ]
+        },
+        {
+            "key": "field_657bb63a291d7",
+            "label": "Style",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_657bb647291d8",
+            "label": "Share Buttons Block: Button Colours",
+            "name": "share_buttons_block-_button_colours",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "dark": "Dark",
+                "light": "Light",
+                "success": "Success",
+                "warning": "Warning",
+                "danger": "Danger"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_60fafa296d31d",
+            "label": "Button Alignment",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_60faf9fd6d31c",
+            "label": "Share Buttons Block: Desktop Alignment",
+            "name": "share_buttons_block-_desktop_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e6523d0d59",
+            "label": "Share Buttons Block: Adjust View Alignment",
+            "name": "share_buttons_block-_adjust_view_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Change Alignment at specific view (IE: Tablet)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "Tablet": "Tablet",
+                "Mobile": "Mobile",
+                "Tablet & Mobile": "Tablet & Mobile"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e6550d0d5a",
+            "label": "Share Buttons Block: Tablet Alignment",
+            "name": "share_buttons_block-_tablet_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e6523d0d59",
+                        "operator": "==",
+                        "value": "Tablet"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e6523d0d59",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e6577d0d5c",
+            "label": "Share Buttons Block: Mobile Alignment",
+            "name": "share_buttons_block-_mobile_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e6523d0d59",
+                        "operator": "==",
+                        "value": "Mobile"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e6523d0d59",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/share-buttons-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037002
+}

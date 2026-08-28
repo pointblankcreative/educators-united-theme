@@ -1,0 +1,19 @@
+{
+    "name": "acf/new-block",
+    "title": "New Block",
+    "description": "a description.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "new-block.php"
+    },
+    "supports":{
+        "align": false,
+        "anchor": true
+    },
+    "editorStyle": [ 
+        "new_block"
+    ],
+    "category": "acfp-blocks",
+    "icon": "button",
+    "keywords": ["button", "block", "theme", "call", "to", "action", "cta"]
+}

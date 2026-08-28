@@ -1,0 +1,15 @@
+{
+    "name": "acf/cta-button-block",
+    "title": "CTA Button Block",
+    "description": "A custom button block.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cta-button-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "category": "acfp-blocks",
+    "icon": "button",
+    "keywords": ["button", "block", "theme", "call", "to", "action", "cta"]
+}

@@ -1,0 +1,347 @@
+{
+    "key": "group_61991b5739635",
+    "title": "Block: Popup Button Block",
+    "fields": [
+        {
+            "key": "field_62226d0d69b03",
+            "label": "Text & Popup ID",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61991b573d2ba",
+            "label": "Popup Button Block: Text",
+            "name": "popup_button_block-_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61991b573d2c0",
+            "label": "Popup Button Block: Popup ID",
+            "name": "popup_button_block-_popup_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Place ID for Popup here. No spaces or special characters.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61991b573d2d4",
+            "label": "Button Colours",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_622bb54ad91ac",
+            "label": "Popup Button Block: Button Colour",
+            "name": "popup_button_block-_button_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "dark": "Dark",
+                "light": "Light",
+                "success": "Success",
+                "warning": "Warning",
+                "danger": "Danger"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61991b573d2ea",
+            "label": "Button Padding",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61991b573d2ef",
+            "label": "Popup Button Block: Padding Top And Bottom",
+            "name": "popup_button_block-_padding_top_and_bottom",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Measured in pixels",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "9.5",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61991b573d2f4",
+            "label": "Popup Button Block: Padding Left And Right",
+            "name": "popup_button_block-_padding_left_and_right",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Measured in pixels",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 15,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61991b573d2ca",
+            "label": "Button Alignment",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61991b573d2cf",
+            "label": "Popup Button Block: Desktop Alignment",
+            "name": "popup_button_block-_desktop_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_621e53f8bd3aa",
+            "label": "Popup Button Block: Adjust View Alignment",
+            "name": "popup_button_block-_adjust_view_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Change Alignment at specific view (IE: Tablet)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "Tablet": "Tablet",
+                "Mobile": "Mobile",
+                "Tablet & Mobile": "Tablet & Mobile"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_621e5417bd3ab",
+            "label": "Popup Button Block: Tablet Alignment",
+            "name": "popup_button_block-_tablet_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e53f8bd3aa",
+                        "operator": "==",
+                        "value": "Tablet"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e53f8bd3aa",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_621e543abd3ad",
+            "label": "Popup Button Block: Mobile Alignment",
+            "name": "popup_button_block-_mobile_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e53f8bd3aa",
+                        "operator": "==",
+                        "value": "Mobile"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e53f8bd3aa",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/popup-button-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1712331948
+}

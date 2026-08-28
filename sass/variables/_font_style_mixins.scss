@@ -1,0 +1,243 @@
+@use "../variables/main_colours" as colours;
+@use "../variables/breakpoints" as breakpoint;
+
+@mixin h1XtraLargeFont{
+    font-size: 56px !important;
+    @include breakpoint.media-down(md) {
+        font-size: 46px !important;
+    }
+    @include breakpoint.media-down(md) {
+        font-size: 32px !important;
+    }
+}
+
+@mixin h2LargeFont{
+    font-size: 56px !important;
+    @include breakpoint.media-down(md) {
+        font-size: 46px !important;
+    }
+    @include breakpoint.media-down(md) {
+        font-size: 32px !important;
+    }
+}
+
+@mixin MediumFont{
+    font-size: 36px !important;
+    @include breakpoint.media-down(md) {
+        font-size: 33px !important;
+    }
+}
+
+@mixin RegularFont{
+    font-size: 16px;
+}
+
+@mixin SmallFont{
+    font-size: 14px;
+}
+
+@mixin  title-font{    
+
+}
+@mixin paragraph-font{
+
+}
+@mixin font-styles{
+    h1, .h1{
+        font-weight: 900 !important;
+    }
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4,.h4{
+        line-height: 1.2;
+        @include  title-font;
+        color: colours.$Dark;
+        font-weight: 700 !important;
+        a{ 
+            @include  title-font; 
+            color: colours.$Dark;
+            font-weight: 700 !important;
+        }
+    }
+    h5, .h5,
+    h6, .h6{
+        line-height: 1.2;
+        @include  title-font;
+        color: colours.$Dark;
+        font-weight: 700 !important;
+        a{
+            @include  title-font; 
+            color: colours.$Dark;
+            font-weight: 700 !important;
+        }
+    }
+
+    p, a, p a, ul,li,ul li, ul li a, h6{
+        @include paragraph-font;
+        color: colours.$Dark;
+        font-weight: 400 !important; 
+        strong, &.fw-bold{
+            a{
+                font-weight: 400 !important; 
+            }
+            &{
+                font-weight: 400 !important; 
+            }
+        }
+    }
+    .ThemeButton, .CTAButtons a{
+        @include  title-font;
+        font-weight: 700 !important;
+    }
+}
+@mixin font-sizes{
+    
+    h1, .h1,
+    h1 a, .h1 a{
+        @include h1XtraLargeFont;
+    }
+    h2, .h2,
+    h2 a, .h2 a{
+        @include h2LargeFont;
+    }
+    h3, .h3,
+    h3 a, .h3 a{
+        font-size: 40px !important;
+        @include breakpoint.media-down(md) {
+            font-size: 36px !important;
+        }
+    }
+    h4, .h4,
+    h4 a, .h4 a{
+        @include MediumFont;
+    }
+    h5, .h5,
+    h5 a, .h5 a{
+        font-size: 33px !important;
+        @include breakpoint.media-down(md) {
+            font-size: 28px !important;
+        }
+    }
+    h6, .h6,
+    h6 a, .h6 a{
+        font-size: 28px !important;
+        @include breakpoint.media-down(md) {
+            font-size: 22px !important;
+        }
+    }
+
+    p, a, 
+    ul, ol,
+    li,
+    ul li, 
+    ul li a,
+    ol li, 
+    ol li a {
+        @include RegularFont;
+    }
+    li,
+    ul li, 
+    ul li a,
+    ol li, 
+    ol li a {
+        line-height: 1.1;
+    }
+
+    .has-x-large-font-size{
+        @include h1XtraLargeFont;
+        p, a, 
+        ul, ol,
+        li,
+        ul li, 
+        ul li a,
+        ol li, 
+        ol li a {
+            @include h1XtraLargeFont;
+        }
+    }
+
+    .has-large-font-size{
+        @include h2LargeFont;
+        p, a, 
+        ul, ol,
+        li,
+        ul li, 
+        ul li a,
+        ol li, 
+        ol li a {
+            @include h2LargeFont;
+        }
+    }
+
+    .has-medium-font-size{
+        @include MediumFont;
+        p, a, 
+        ul, ol,
+        li,
+        ul li, 
+        ul li a,
+        ol li, 
+        ol li a {
+            @include MediumFont;
+        }
+    }
+
+    small, .small,
+    small a, .small a,
+    small li, .small li {
+        @include SmallFont;
+    }
+
+    .has-small-font-size{
+        @include SmallFont;
+        p, a, 
+        ul, ol,
+        li,
+        ul li, 
+        ul li a,
+        ol li, 
+        ol li a {
+            @include SmallFont;
+        }
+    }
+
+    sup, sup a{
+        font-size: 0.75em !important;
+    }
+    .large, .large a{
+        font-size: 38px;
+        @include breakpoint.media-down(md) {
+            font-size: 32px;
+        }
+    }
+}
+
+@mixin footer-styles{
+    p, p a, a p,
+    ul, li, ul li, li a, ul li a{
+        color: colours.$Light;
+        @include RegularFont;
+        @include  title-font; 
+        font-weight: 400 !important;
+    }
+    ul{
+        padding:0;
+        margin:0;
+        li{
+            padding:0;
+            margin:0 0 7px 0;
+            list-style: none !important;
+        }
+    }
+    a{
+        text-decoration: none !important;
+        &:hover{
+            text-decoration: underline !important;
+        }
+    }
+    p{
+        margin:0 0 7px 0;
+    }
+}

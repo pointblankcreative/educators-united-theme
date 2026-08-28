@@ -1,0 +1,16 @@
+{
+    "apiVersion": 2,
+    "name": "acf/slider-gallery-block",
+    "title": "Slider Gallery Block",
+    "description": "This custom slider gallery block gives the user the ability to add and remove images from the gallery fast and easy.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "slider-gallery-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "icon": "images-alt2",
+    "category": "acfp-blocks",
+    "keywords": ["Gallery", "Image", "Images", "Block", "Slider" ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "acf/container-block",
+    "title": "Container Block",
+    "description": "A custom container block.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "container-block.php"
+    },
+    "supports":{
+        "anchor": true,
+        "align": false,
+        "jsx": true
+    },
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "keywords": ["section", "container"]
+}

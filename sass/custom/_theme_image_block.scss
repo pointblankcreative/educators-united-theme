@@ -1,0 +1,27 @@
+.ThemeImageBlock{
+    a, a:hover{
+        text-decoration: none !important;
+    }
+}
+.ThemeImageBlock, .wp-block-image{
+    a:hover{
+        opacity: 1;
+    }
+}
+.BiggerHover{
+    img{
+        transition: 300ms;
+        &:hover{
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,.3);
+            transform: translatey(-5px);
+        }
+    }
+}
+.CircleImage{
+    img{
+        aspect-ratio: 4 /4;
+        object-fit: cover; /* Ensures the image covers the area */
+        display: block;
+        border-radius: 100%;
+    }
+}

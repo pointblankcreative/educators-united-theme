@@ -1,0 +1,16 @@
+ .CTAStickyButtonAlert{
+    bottom:-140%;
+    width: 100%;
+    transition: 300ms;
+    z-index: 1;
+    position: fixed;
+    #StickyAlertButton{
+        cursor: pointer;
+    }
+    .ThemeButton{
+        padding: 8px 15px;
+    }
+    &.Active{
+        bottom:0;
+    }
+ }

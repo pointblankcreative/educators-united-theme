@@ -1,0 +1,24 @@
+/*
+    Description:
+    This file overrides the styles set for the WP Table Block
+*/
+td{
+    //font-size: 20px;
+    padding-right: 5px;
+    padding-top: 3px;
+}
+
+.wp-block-table td{
+    padding-top: 20px;
+    border:none;
+    border-bottom: 1px solid ;
+    
+    a{
+        transition: 0.5s;
+    }
+
+    a:hover{
+        transition: 0.5s;
+    }
+
+}

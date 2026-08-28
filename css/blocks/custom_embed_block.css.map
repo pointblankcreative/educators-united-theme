@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/custom_embed_block.scss"],"names":[],"mappings":"AAAA,kBACI,WAAA,IACA,cAAA,IACA,MAAA,KACA,oBACI,OAAA","file":"custom_embed_block.css","sourcesContent":[".CustomEmbedBlock{\n    margin-top: 5px;\n    margin-bottom: 5px;\n    width: 100%;\n    a{\n        cursor: pointer;\n    }\n} "]}

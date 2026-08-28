@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("Form"),n=document.getElementById("CTAStickyButtonAlert"),t=document.querySelectorAll("#StickyAlertButton");e&&n&&t.length&&(t.forEach(function(t){t.addEventListener("click",function(t){t.preventDefault(),e.scrollIntoView({behavior:"smooth",block:"start"})})}),new IntersectionObserver(function(t){t.forEach(function(t){t.isIntersecting?n.classList.remove("Active"):n.classList.add("Active")})},{threshold:.25}).observe(e))});
+//# sourceMappingURL=sticky_alert.js.map

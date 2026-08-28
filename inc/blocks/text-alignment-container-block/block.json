@@ -1,0 +1,16 @@
+{
+    "name": "acf/text-alignment-container-block",
+    "title": "Text Alignment Container Block",
+    "description": "A custom block that helps change content alignment (Like Images and text) on desktop, tablet, and mobile screens.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "text-alignment-container-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "keywords": ["section", "container", "block", "alignment"]
+}

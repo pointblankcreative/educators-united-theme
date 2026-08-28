@@ -1,0 +1,15 @@
+{
+    "name": "acf/custom-image-block",
+    "title": "Custom Image Block",
+    "description": "A custom image block with some extra controls not in the WP Image Block.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "custom-image-block.php"
+    },
+    "supports":{
+        "align": false
+    },
+    "category": "acfp-blocks",
+    "icon": "format-image",
+    "keywords": ["image", "block", "theme", "custom"]
+}

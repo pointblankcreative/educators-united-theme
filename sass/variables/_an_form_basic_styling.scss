@@ -1,0 +1,93 @@
+@use "../variables/breakpoints" as breakpoint;
+
+@mixin form_styling(){
+    //following styles are for the AN form
+    .can_embed{
+        
+        h2, h4{
+            display: none !important;
+        }
+        
+        .form_builder_output,
+        .ajax-loading,
+        .action_owner,
+        .js-d_sharing,
+        #logo_wrap{
+            display: none !important;
+        }
+        li{
+            list-style: none;
+            //line-height: 1;
+            //margin-top: -8px;
+        }
+        .floatlabel-wrapper {
+            display: flex;
+            flex-direction: column;
+            label{
+                margin-bottom:8px;
+            }
+        }
+        label{ 
+            margin-bottom:5px;
+        }
+        .js-fb-multipleradios{
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        /*
+        a, p, h1, h2, h3, h4, h5, h6, p a, label, span{
+            color: $Light !important;
+        }
+        */
+        input[type="email"],
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="search"],
+        input[type="url"], 
+        textarea{
+            width: 100%;
+            font-size: 25px;
+            border: none;
+            //border-radius: 20px;
+            &::placeholder {
+                color: transparent;
+            }
+        }
+        input[type="submit"]{
+            @include breakpoint.media-down(md) {
+                margin-top: 2rem;
+            }
+        }
+
+        .international_link-wrap, .can_select{
+            display: none !important;
+        }
+        /*
+        .floatlabel-wrapper {
+            label[for="form-phone"] {
+                display: none !important;
+            }
+        }
+        */
+
+        input[type="submit"]{
+            margin-top:0;
+            padding: 15px 40px;
+            //background-color: colours.$DarkGreen;
+            //color: colours.$Light;
+            border: 4px solid;
+            //border-color: colours.$DarkGreen'
+            border-radius: 5px;
+            transition: 300ms;
+            font-weight: 600 !important;
+            &:hover{
+                //background-color: colours.$Light;
+                //color: colours.$DarkGreen;
+            }
+        }
+        .checkbox_group_wrap{
+            margin: 2rem 0;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@use "../variables/breakpoints" as breakpoint;
+
+//reverse class
+@media screen and (max-width: 599px) {
+    .reverse-mobile{
+        .wp-block-column:nth-child(1){
+            order:2;
+        }
+         
+        .wp-block-column:nth-child(2){
+            order:1;
+        }
+    }
+}
+
+//pointer class adds hover pointer
+.pointer{
+    cursor: pointer;
+}
+
+.NoMarginBottom{
+    margin-bottom: 0 !important;
+}
+
+.text-shadow{
+    text-shadow: 1px 1px rgba(0,0,0,0.4);
+}
+.text-shadow-2{
+    text-shadow: rgb(0 0 0 / 30%) 1px 0 10px;
+}
+
+.overlay-class{
+    background-blend-mode: overlay;
+}
+
+@include breakpoint.media-up(md) {
+    .ParallaxClass{
+        background-attachment: fixed !important;
+    }
+}
+
+.Pointer{
+    cursor: pointer;
+}

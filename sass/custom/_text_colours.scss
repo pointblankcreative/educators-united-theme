@@ -1,0 +1,15 @@
+@use "../variables/main_colours" as colours;    
+
+@mixin text_colour($TextColourName, $TextColour) {
+    .has-#{$TextColourName}-color,
+    .has-#{$TextColourName}-color li{
+        color: $TextColour !important;
+    }
+
+}
+
+//loops through colours in ../variables/main_colours.
+//Make sure the colour names match the slug name in inc > globales > global_editor_colours.php
+@each $name, $value in colours.$theme-colours {
+  @include text_colour($name, $value);
+}

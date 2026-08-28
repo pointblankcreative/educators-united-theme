@@ -1,0 +1,114 @@
+{
+    "key": "group_6408df7eeb38b",
+    "title": "Block: Scroll Into View Container",
+    "fields": [
+        {
+            "key": "field_6408df7f67fd6",
+            "label": "Scroll Into View Container: Animation",
+            "name": "scroll_into_view_container-_animation",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fade-up": "Fade Up",
+                "fade-down": "Fade Down",
+                "fade-left": "Fade Left",
+                "fade-right": "Fade Right",
+                "fade-up-right": "Fade-up Right",
+                "fade-up-left": "Fade-up Left",
+                "fade-down-right": "Fade-dow Right",
+                "fade-down-left": "Fade-dow Left",
+                "flip-left": "Flip Left",
+                "flip-right": "Flip Right",
+                "flip-up": "Flip Up",
+                "flip-down": "Flip down",
+                "zoom-in": "Zoom In",
+                "zoom-in-up": "Zoom In Up",
+                "zoom-in-down": "Zoom In Down",
+                "zoom-in-left": "Zoom In Left",
+                "zoom-in-right": "Zoom In Right",
+                "zoom-out": "Zoom Out",
+                "zoom-out-up": "Zoom Out Up",
+                "zoom-out-down": "Zoom Out Down",
+                "zoom-out-left": "Zoom Out Left",
+                "zoom-out-right": "Zoom Out Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6408ebda0762a",
+            "label": "Scroll Into View Container: Animation Delay",
+            "name": "scroll_into_view_container-_animation_delay",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Measured in milliseconds.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": 0,
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65a30c9746a47",
+            "label": "Scroll Into View Container: Animate only once",
+            "name": "scroll_into_view_container-_animate_only_once",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/scroll-into-view-container-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1743442547
+}

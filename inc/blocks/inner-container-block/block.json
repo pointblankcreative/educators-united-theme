@@ -1,0 +1,16 @@
+{
+    "name": "acf/inner-container-block",
+    "title": "Inner Container Block",
+    "description": "A custom container that helps with a number of things, such as adding a max width, rounded corners, and more.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "inner-container-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "keywords": ["max", "container", "block", "width", "rounded", "corners"]
+}

@@ -1,0 +1,38 @@
+@use "../variables/breakpoints" as breakpoint;
+
+@mixin VHContainerSizeBase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.Container25Center{
+    min-height: 25vh;
+    @include VHContainerSizeBase();
+}
+.Container50Center{
+    min-height: 50vh;
+    @include VHContainerSizeBase();
+}
+.Container75Center{
+    min-height: 75vh;
+    @include VHContainerSizeBase();
+}
+.Container100Center{
+    min-height: 100vh;
+    @include VHContainerSizeBase();
+}
+
+.ExtraWide{
+    @media screen and (min-width: 1729px) {
+        max-width: 1728px !important;
+    }
+    @media screen and (max-width: 1728px) {
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "apiVersion": 2,
+    "name": "acf/popup-button-block",
+    "title": "Popup Button Block",
+    "description": "A custom popup button block used to activate a podal block.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "popup-button-block.php"
+    },
+    "supports":{
+        "align": false,
+        "mutliple": false
+    },
+    "icon": "button",
+    "category": "acfp-blocks",
+    "keywords": ["button", "block", "modal", "pop", "popup"]
+}

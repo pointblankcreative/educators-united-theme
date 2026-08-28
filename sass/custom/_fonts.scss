@@ -1,0 +1,17 @@
+@use '../variables/_font_style_mixins' as fonts;  
+
+.MainNavigation{
+    ul{
+        li{
+            a{
+                @include fonts.title-font;
+                font-size: 16px;
+                font-weight: 800;
+            }
+        }
+    }
+}
+main{
+    @include fonts.font-styles;
+    @include fonts.font-sizes;
+} 

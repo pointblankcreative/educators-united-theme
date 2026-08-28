@@ -1,0 +1,93 @@
+{
+    "key": "group_619923aaf2cde",
+    "title": "Block: Popup Block",
+    "fields": [
+        {
+            "key": "field_619923bd57f9e",
+            "label": "Popup Block: ID",
+            "name": "popup_block-_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Create unique ID to be placed into the Popup Button Block (which will open the modal). No spaces or special characters.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6199564287463",
+            "label": "Popup Block: Popup Size",
+            "name": "popup_block-_popup_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Normal": "Normal",
+                "modal-sm": "Small",
+                "modal-lg": "Large",
+                "modal-xl": "Extra Large"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_620ab1e783280",
+            "label": "Popup Block: Popup Title",
+            "name": "popup_block-_popup_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/popup-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1712332029
+}

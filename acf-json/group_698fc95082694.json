@@ -1,0 +1,336 @@
+{
+    "key": "group_698fc95082694",
+    "title": "Options: Social Media Buttons Controls",
+    "fields": [
+        {
+            "key": "field_698fc95083c02",
+            "label": "Social Media Buttons Controls: Social Media Buttons",
+            "name": "social_media_buttons_controls-_social_media_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Social Media Button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_698fc95086b57",
+                    "label": "Social Media Buttons Controls: Social Media Button Type",
+                    "name": "social_media_buttons_controls-_social_media_button_type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Facebook": "Facebook",
+                        "Twitter": "Twitter",
+                        "Bluesky": "Bluesky",
+                        "Instagram": "Instagram",
+                        "Youtube": "Youtube",
+                        "Vimeo": "Vimeo",
+                        "LinkedIn": "LinkedIn",
+                        "TikTok": "TikTok",
+                        "Email": "Email",
+                        "Phone": "Phone",
+                        "ApplePodcast": "Apple Podcast",
+                        "GooglePodcast": "Google Podcast",
+                        "Soundcloud": "Soundcloud",
+                        "Spotify": "Spotify",
+                        "RSS": "RSS"
+                    },
+                    "default_value": "Facebook",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_698fc95083c02"
+                },
+                {
+                    "key": "field_698fc95086b5c",
+                    "label": "Social Media Buttons Controls: Email or Page Link?",
+                    "name": "social_media_buttons_controls-_email_or_page_link",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Email": "Email",
+                        "Page Link": "Page Link"
+                    },
+                    "default_value": "Email",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_698fc95083c02"
+                },
+                {
+                    "key": "field_698fc95086b5f",
+                    "label": "Social Media Buttons Controls: Email Address",
+                    "name": "social_media_buttons_controls-_email_address",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Email"
+                            },
+                            {
+                                "field": "field_698fc95086b5c",
+                                "operator": "==",
+                                "value": "Email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_698fc95083c02"
+                },
+                {
+                    "key": "field_698fc95086b62",
+                    "label": "Social Media Buttons Controls: Link",
+                    "name": "social_media_buttons_controls-_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Email"
+                            },
+                            {
+                                "field": "field_698fc95086b5c",
+                                "operator": "==",
+                                "value": "Page Link"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Facebook"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Twitter"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Bluesky"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Instagram"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Youtube"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Vimeo"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "LinkedIn"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "TikTok"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "ApplePodcast"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "GooglePodcast"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Soundcloud"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Spotify"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "RSS"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_698fc95083c02"
+                },
+                {
+                    "key": "field_698fc95086b64",
+                    "label": "Social Media Buttons Controls: Phone Number",
+                    "name": "social_media_buttons_controls-_phone_number",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "No letters.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698fc95086b57",
+                                "operator": "==",
+                                "value": "Phone"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_698fc95083c02"
+                }
+            ]
+        },
+        {
+            "key": "field_698fc95083c05",
+            "label": "Social Media Buttons Controls: Social Media Button Colour",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Controls for Social Media footer colours can be found in Misc Site Settings > Footer Controls",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-socials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1772226785
+}

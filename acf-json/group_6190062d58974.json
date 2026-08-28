@@ -1,0 +1,454 @@
+{
+    "key": "group_6190062d58974",
+    "title": "Block: Embed Block",
+    "fields": [
+        {
+            "key": "field_621e4e021c7f6",
+            "label": "Embed Block Link",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_61900654c5481",
+            "label": "Embed Block: Link to Embed",
+            "name": "embed_block-_link_to_embed",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "To find out what embed links work, visit this page: https:\/\/wordpress.org\/support\/article\/embeds\/",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_619149ffaf440",
+            "label": "Embed Block: Video Thumbnail",
+            "name": "embed_block-_video_thumbnail",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn Embed Youtube or Vimeo Video into thumbnail when page loads. This will improve page load speeds.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "youtu"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "vimeo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_63d9ce1d1ce12",
+            "label": "Embed Block: Video Thumbnail Decoration",
+            "name": "embed_block-_video_thumbnail_decoration",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Turn Embed Youtube or Vimeo Video into thumbnail when page loads. This will improve page load speeds.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "youtu"
+                    },
+                    {
+                        "field": "field_619149ffaf440",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "vimeo"
+                    },
+                    {
+                        "field": "field_619149ffaf440",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrow": "Play Button",
+                "text": "Text"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_63d9ce7a1ce16",
+            "label": "Embed Block: Video Thumbnail Decoration Text",
+            "name": "embed_block-_video_thumbnail_decoration_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Turn Embed Youtube or Vimeo Video into thumbnail when page loads. This will improve page load speeds.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "youtu"
+                    },
+                    {
+                        "field": "field_619149ffaf440",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_63d9ce1d1ce12",
+                        "operator": "==",
+                        "value": "text"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_61900654c5481",
+                        "operator": "==contains",
+                        "value": "vimeo"
+                    },
+                    {
+                        "field": "field_619149ffaf440",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_63d9ce1d1ce12",
+                        "operator": "==",
+                        "value": "text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_621e4e461c7f7",
+            "label": "Embed Block Styles",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_619006e880251",
+            "label": "Embed Block: Max Width",
+            "name": "embed_block-_max_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Measured in pixels",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61916b56ba15f",
+            "label": "Embed Block: Hover Zoom Animation",
+            "name": "embed_block-_hover_zoom_animation",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "***Only works for youtube and vimeo videos",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_619149ffaf440",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "img-hover-zoom img-hover-zoom--slowmo": "Slow Zoom",
+                "img-hover-zoom img-hover-zoom--quick-zoom": "Quick Zoom",
+                "img-hover-zoom img-hover-zoom--zoom-n-rotate": "Zoom & Rotate"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e4e501c7f8",
+            "label": "Embed Block Alignment",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_619006e880251",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_621e4e97779a6",
+            "label": "Embed Block: Desktop Alignment",
+            "name": "embed_block-_desktop_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e4f0e779a7",
+            "label": "Embed Block: Adjust View Alignment",
+            "name": "embed_block-_adjust_view_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Change Alignment at specific view (IE: Tablet)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "None": "None",
+                "Tablet": "Tablet",
+                "Mobile": "Mobile",
+                "Tablet & Mobile": "Tablet & Mobile"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e4f5a00e4e",
+            "label": "Embed Block: Tablet Alignment",
+            "name": "embed_block-_tablet_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e4f0e779a7",
+                        "operator": "==",
+                        "value": "Tablet"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e4f0e779a7",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_621e4fac00e50",
+            "label": "Embed Block: Mobile Alignment",
+            "name": "embed_block-_mobile_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_621e4f0e779a7",
+                        "operator": "==",
+                        "value": "Mobile"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_621e4f0e779a7",
+                        "operator": "==",
+                        "value": "Tablet & Mobile"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "start": "Left",
+                "center": "Center",
+                "end": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/embed-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037010
+}

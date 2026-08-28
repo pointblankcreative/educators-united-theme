@@ -1,0 +1,174 @@
+@use "../variables/main_colours" as colours;
+@use "theme_button_style" as theme_btn;
+
+
+.mc4wp-form {
+  max-width: 100%;
+
+  .mc4wp-form-fields {
+    > p {
+      margin-bottom: 1rem;
+    }
+
+    // Labels – Bootstrap form-label style
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+      color: #212529;
+
+      // Honeypot stays hidden
+      &[style*="display: none"] {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+    }
+
+    // When label wraps the input (e.g. email), add gap between label text and input
+    label:has(input[type="email"]),
+    label:has(input[type="text"]),
+    label:has(input[type="tel"]) {
+      input {
+        margin-top: 0.25rem;
+      }
+    }
+
+    // Text inputs, email, tel – Bootstrap form-control style
+    input[type="email"],
+    input[type="text"],
+    input[type="tel"] {
+      display: block;
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &::placeholder {
+        color: #6c757d;
+        opacity: 1;
+      }
+
+      &:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+
+      &:disabled {
+        background-color: #e9ecef;
+        opacity: 1;
+      }
+    }
+
+    // Radio group – Bootstrap form-check style (stacked)
+    p:has(input[type="radio"]) {
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+        cursor: pointer;
+
+        input[type="radio"] {
+          width: 1em;
+          height: 1em;
+          margin: 0;
+          accent-color: #0d6efd;
+          cursor: pointer;
+        }
+      }
+    }
+
+    // Checkbox – Bootstrap form-check style
+    p:has(input[type="checkbox"]) {
+      label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-weight: 400;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          width: 1em;
+          height: 1em;
+          margin: 0.2em 0 0 0;
+          flex-shrink: 0;
+          accent-color: #0d6efd;
+          cursor: pointer;
+        }
+      }
+    }
+
+    // Submit button – theme button style; colours from mailchimp-submit-colours mixin above
+    input[type="submit"] {
+      @include theme_btn.button-stuff;
+      border-width: 4px;
+      border-style: solid;
+      border-color: transparent;
+      padding: 8px 15px;
+      transition: 0.3s;
+
+      color: colours.$Light !important;
+      background-color: colours.$Primary !important;
+      border-color: colours.$Primary !important;
+
+      &:hover, &:focus, &:active {
+        color: colours.$Primary !important;
+        background-color: colours.$Light !important;
+      }
+
+      &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+
+    // Hidden fields – no layout
+    input[type="hidden"] {
+      display: none !important;
+    }
+  }
+
+  // Response message area – Bootstrap alert style
+  .mc4wp-response {
+    margin-top: 1rem;
+    //padding: 0.75rem 1rem;
+    //border: 1px solid transparent;
+    border-radius: 0.375rem;
+
+    &:not(:empty) {
+      display: block;
+    }
+
+    // Success (default MC4WP success class or when no error class)
+    &:not(.mc4wp-error) {
+      color: #0f5132;
+      background-color: #d1e7dd;
+      //border-color: #badbcc;
+    }
+
+    // Error
+    &.mc4wp-error {
+      color: #842029;
+      background-color: #f8d7da;
+      //border-color: #f5c2c7;
+    }
+  }
+}

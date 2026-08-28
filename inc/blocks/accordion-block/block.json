@@ -1,0 +1,20 @@
+{
+    "name": "acf/accordion-block",
+    "title": "Accordion Block",
+    "description": "A custom accordion block.",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "accordion-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "editorStyle": [ 
+        "accordion_block"
+    ],
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "providesContext": {"acf/fields": "data"},
+    "keywords": ["card", "cards", "block"]
+}

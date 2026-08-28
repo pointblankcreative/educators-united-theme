@@ -1,0 +1,27 @@
+
+.control {
+    li{
+        position: absolute;
+        top: 40%;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px
+    }
+    .fas{
+        color: rgba(0,0,0,0.8);;
+    }
+    .prev{
+        left:5px;
+        .fas{
+            padding: 5px 11px;
+        }
+    }
+    .next{
+        right:5px;
+        .fas{
+            padding: 5px 15px;
+        }
+    }
+
+}

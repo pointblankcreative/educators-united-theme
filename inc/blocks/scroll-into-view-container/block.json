@@ -1,0 +1,20 @@
+{
+    "name": "acf/scroll-into-view-container-block",
+    "title": "Scroll Into View Container Block",
+    "description": "animate content into view.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "scroll-into-view-container.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "viewScript": [
+        "scroll_animation_library",
+        "scroll_animation_library_start"
+    ],
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "keywords": ["scroll", "container", "animation", "animate", "animate"]
+}

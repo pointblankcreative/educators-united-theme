@@ -1,0 +1,78 @@
+{
+    "key": "group_654bbed35b0d6",
+    "title": "Block: Accordion Block",
+    "fields": [
+        {
+            "key": "field_654bbed320571",
+            "label": "Accordion Block: ID",
+            "name": "accordion_block-_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Assign an ID to this field. Make sure there are no spaces in the ID.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657a259e79b39",
+            "label": "Accordion Block: Tab Colours",
+            "name": "accordion_block-_tab_colours",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "dark": "Dark",
+                "light": "Light",
+                "success": "Success",
+                "warning": "Warning",
+                "danger": "Danger"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/accordion-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1771037023
+}

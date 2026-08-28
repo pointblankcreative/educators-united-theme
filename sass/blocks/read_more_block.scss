@@ -1,0 +1,35 @@
+.ReadMoreBlock{
+    line-height: 1;
+    .read-more{
+        transition: height .5s ease;
+        overflow  : hidden;
+    }
+    .read-more:not(.active) {
+        display: none;
+    }
+    .read-more-link{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        text-decoration: none !important;
+        &:hover{
+            text-decoration: none !important;
+        }
+        &:after{
+            font-family: "Font Awesome 5 Free"; 
+            content: "\f078";
+            font-weight: 900;
+            margin-left: 5px;
+            display: inline-block;
+            transition: 300ms;
+        }
+        &.active{
+            &:after{
+                margin-left: 5px;
+                display: inline-block;
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}

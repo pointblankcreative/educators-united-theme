@@ -1,0 +1,12 @@
+@use "../variables/main_colours" as colours;
+
+.FilesBlock{
+    .ThemeButtonWrapper .ThemeButton{
+        padding: 4px;
+        width: 170px;
+    }
+    .far, .fas{
+        //color: $Primary;
+        font-size: 80px;
+    }
+}

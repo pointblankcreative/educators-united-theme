@@ -1,0 +1,23 @@
+/*Top Divider Designs*/
+.Darker1{
+    filter: brightness(85%);
+}
+.Darker2{
+    filter: brightness(70%);
+}
+
+.Darker3{
+    //filter: opacity(0.4);
+    fill-opacity: 0.4;
+    stroke-opacity: 0.4;
+    
+}
+.Darker4{
+    //filter: opacity(0.3); 
+    fill-opacity: 0.3;
+    stroke-opacity: 0.3;
+}
+
+svg g{
+    box-sizing: content-box !important;
+} 

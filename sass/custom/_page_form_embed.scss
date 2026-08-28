@@ -1,0 +1,55 @@
+@use "../variables/breakpoints" as breakpoint;
+
+.PageWidget{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    right: 0;
+    width: 40%;
+    @include breakpoint.media-down(lg) {
+        width: 50%;
+    }
+    @include breakpoint.media-down(md) {
+        width: 100%;
+    }
+    .PageWidgetInner{
+        border-radius: 15px;
+        padding: 20px;
+        @include breakpoint.media-down(md) {
+            padding: 20px 0;
+        }
+    }
+    .position-sticky{
+        top: 50px;
+        @include breakpoint.media-down(md) {
+            position: inherit;
+        }
+    }
+    /*
+    p{
+        //font-size: 0.9rem !important;
+    }
+    */
+    @include breakpoint.media-down(md) {
+        .PageWidgetContainer{
+            @include breakpoint.media-down(md) {
+                max-width: 540px;
+                width: 100%;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-right: auto;
+                margin-left: auto;
+
+            }
+            @include breakpoint.media-down(sm) {
+                max-width: 100%;
+            }
+
+        }
+    }
+    
+}
+.PageWidgetMobile{
+    padding: 20px;
+    bottom: 0;
+}

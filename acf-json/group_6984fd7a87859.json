@@ -1,0 +1,940 @@
+{
+    "key": "group_6984fd7a87859",
+    "title": "Page Options: Default Page Options",
+    "fields": [
+        {
+            "key": "field_69973c389cee3",
+            "label": "Navigation Override",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69973db49cee5",
+            "label": "Default Page Options: Remove Nav Bar",
+            "name": "default_page_options-_remove_nav_bar",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If set this will replace the logo at the top of the page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_69a20341e7c9f",
+            "label": "Default Page Options: Hide Navigation Logo",
+            "name": "default_page_options-_hide_navigation_logo",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If set this will replace the logo at the top of the page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69973db49cee5",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_69973c409cee4",
+            "label": "Default Page Options: Override Main Logo",
+            "name": "default_page_options-_override_main_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "If set this will replace the logo at the top of the page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69973db49cee5",
+                        "operator": "!=",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_69a20341e7c9f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6984fd7a1a558",
+            "label": "Banner Image",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6984fdc31a55a",
+            "label": "Default Page Options: Add Banner",
+            "name": "default_page_options-_add_banner",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_6984fdb01a559",
+            "label": "Default Page Options: Banner Image",
+            "name": "default_page_options-_banner_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6984fdfa1a55b",
+            "label": "Default Page Options: Banner Image Repeat",
+            "name": "default_page_options-_banner_image_repeat",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Do you want the image to cover the width of the banner or add an image to tile?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no-repeat": "No Repeat",
+                "repeat": "Repeat"
+            },
+            "default_value": "no-repeat",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6984fe701a55c",
+            "label": "Default Page Options: Background Image Size",
+            "name": "default_page_options-_background_image_size",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Measured in pixels. <br\/>\r\nThis determines the size of your tiled image.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984fdfa1a55b",
+                        "operator": "==",
+                        "value": "repeat"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 300,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6984fea01a55e",
+            "label": "Default Page Options: Banner Image Vertical Position",
+            "name": "default_page_options-_banner_image_vertical_position",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Up and down position. <br\/>\r\nMeasured in percentage. <br\/>\r\n50% is center.<\/br>\r\n0% would have the top of the image showing first at the top of the banner.<br\/>\r\n100% would have the bottom of the image showing at the bottom of the banner.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984fdfa1a55b",
+                        "operator": "==",
+                        "value": "no-repeat"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6984ff5c1a55f",
+            "label": "Default Page Options: Banner Image Horizontal Position",
+            "name": "default_page_options-_banner_image_horizontal_position",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Left and right position. <br\/>\r\nMeasured in percentage. <br\/>\r\n50% is center.<\/br>\r\n0% would have the left of the image showing first on the left side of the banner.<br\/>\r\n100% would have the right side of the image showing at the right side of the banner.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984fdfa1a55b",
+                        "operator": "==",
+                        "value": "no-repeat"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6984ffda1a561",
+            "label": "Default Page Options: Banner Image Colour Overlay",
+            "name": "default_page_options-_banner_image_colour_overlay",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Great for adjusting contrasting issues.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "colour": "Colour",
+                "gradient": "Gradient"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_698500151a563",
+            "label": "Default Page Options: Banner Image Overlay Colour",
+            "name": "default_page_options-_banner_image_overlay_colour",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "Great for adjusting contrasting issues.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984ffda1a561",
+                        "operator": "==",
+                        "value": "colour"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(0,0,0,0.4)",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "show_color_wheel": 1,
+            "custom_palette_source": "",
+            "palette_colors": ""
+        },
+        {
+            "key": "field_698501211a566",
+            "label": "Default Page Options: Banner Image Overlay Gradient Colours",
+            "name": "default_page_options-_banner_image_overlay_gradient_colours",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Great for adjusting contrasting issues.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984ffda1a561",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_6985013e1a567",
+            "button_label": "Add Gradient Colour",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6985013e1a567",
+                    "label": "Default Page Options: Banner Image Overlay Gradient Colour",
+                    "name": "default_page_options-_banner_image_overlay_gradient_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 1,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "show_custom_palette": 0,
+                    "show_color_wheel": 1,
+                    "custom_palette_source": "",
+                    "palette_colors": "",
+                    "parent_repeater": "field_698501211a566"
+                }
+            ]
+        },
+        {
+            "key": "field_698501661a568",
+            "label": "Default Page Options: Banner Image Overlay Gradient Colour Direction",
+            "name": "default_page_options-_banner_image_overlay_gradient_colours_direction",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Great for adjusting contrasting issues.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6984ffda1a561",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "to bottom": "Top to Bottom",
+                "to right": "Left to Right",
+                "to bottom right": "Top Left to Bottom Right",
+                "to top right": "Bottom Left to Top Right"
+            },
+            "default_value": "to bottom",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6985036f6fb0b",
+            "label": "Banner Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6984fdc31a55a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6985066f91c92",
+            "label": "Default Page Options: Banner Title",
+            "name": "default_page_options-_banner_title",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "If left blank the banner will load the page title. <br>\r\n<strong>Make sure There is Heading 1 text assigned here<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_698506ae91c94",
+            "label": "Default Page Options: Banner Buttons",
+            "name": "default_page_options-_banner_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "optional.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_698506c32ecff",
+            "button_label": "Add Button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_698506c32ecff",
+                    "label": "Default Page Options: Button Type",
+                    "name": "default_page_options-_button_type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link": "Link",
+                        "download": "Download"
+                    },
+                    "default_value": "link",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_698506ae91c94"
+                },
+                {
+                    "key": "field_698507872ed03",
+                    "label": "Default Page Options: Button Colour",
+                    "name": "default_page_options-_button_colour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "primary": "Primary",
+                        "secondary": "Secondary",
+                        "dark": "Dark",
+                        "light": "Light",
+                        "success": "Success",
+                        "warning": "Warning",
+                        "danger": "Danger"
+                    },
+                    "default_value": "yellow",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_698506ae91c94"
+                },
+                {
+                    "key": "field_6985072e2ed00",
+                    "label": "Default Page Options: Button Link & Text",
+                    "name": "default_page_options-_button_link_text",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698506c32ecff",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_698506ae91c94"
+                },
+                {
+                    "key": "field_698507562ed01",
+                    "label": "Default Page Options: Button Text",
+                    "name": "default_page_options-_button_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698506c32ecff",
+                                "operator": "==",
+                                "value": "download"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_698506ae91c94"
+                },
+                {
+                    "key": "field_698507732ed02",
+                    "label": "Default Page Options: Button File",
+                    "name": "default_page_options-_button_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_698506c32ecff",
+                                "operator": "==",
+                                "value": "download"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_698506ae91c94"
+                }
+            ]
+        },
+        {
+            "key": "field_698502bd6fb06",
+            "label": "Sticky Alert",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_698503a16fb0c",
+            "label": "Default Page Options: Sticky Alert Note",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Buttons will always link and scroll to the form that is part of the Form Container Block. <br\/>\r\nSticky alert will only appear in mobile.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_698a23488b9dc",
+            "label": "Default Page Options: Add Sticky Alert?",
+            "name": "default_page_options-_add_sticky_alert",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_698502de6fb07",
+            "label": "Default Page Options: Sticky Alert Text",
+            "name": "default_page_options-_sticky_alert_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_698a23488b9dc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6985033c6fb09",
+            "label": "Default Page Options: Sticky Alert Background Colour",
+            "name": "default_page_options-_sticky_alert_background_colour",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_698a23488b9dc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFFFFF",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "show_color_wheel": 1,
+            "custom_palette_source": "",
+            "palette_colors": ""
+        },
+        {
+            "key": "field_698503006fb08",
+            "label": "Default Page Options: Sticky Alert Button Text",
+            "name": "default_page_options-_sticky_alert_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_698a23488b9dc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_698503586fb0a",
+            "label": "Default Page Options: Sticky Alert Button Colour",
+            "name": "default_page_options-_sticky_alert_button_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_698a23488b9dc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "dark": "Dark",
+                "light": "Light",
+                "success": "Success",
+                "warning": "Warning",
+                "danger": "Danger"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1772230097
+}

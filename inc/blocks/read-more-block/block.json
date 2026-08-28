@@ -1,0 +1,20 @@
+{
+    "name": "acf/read-more-block",
+    "title": "Read More Block",
+    "description": "A custom container that adds an accordion like container for page content.",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "read-more-block.php"
+    },
+    "supports":{
+        "align": false,
+        "jsx": true
+    },
+    "editorStyle": [ 
+        "read_more_block"
+    ],
+    "category": "acfp-blocks",
+    "icon": "block-default",
+    "keywords": ["scroll", "container", "animation", "animate", "animate"]
+
+}
