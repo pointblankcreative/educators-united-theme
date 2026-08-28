@@ -10,13 +10,12 @@
 
     $PostType = get_queried_object();
 
-    if (!property_exists($PostType, "taxonomy")){
-        $PostType = get_queried_object();
-        $PageTitle = $PostType->label; 
+    if ($PostType === null || !property_exists($PostType, "taxonomy")){
+        $PageTitle = ($PostType !== null) ? $PostType->label : "";
         if($PageTitle == ""){
             $PageTitle = "Posts";
         }
-        $TaxinomySwitch = $PostType->name; 
+        $TaxinomySwitch = ($PostType !== null) ? $PostType->name : "";
     }
     else{
         //redirect home

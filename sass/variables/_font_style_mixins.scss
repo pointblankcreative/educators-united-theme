@@ -1,6 +1,15 @@
 @use "../variables/main_colours" as colours;
 @use "../variables/breakpoints" as breakpoint;
 
+// Display font for playful/comic-style callouts (e.g. closing statement section)
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@mixin comicDisplayFont{
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
 @mixin h1XtraLargeFont{
     font-size: 56px !important;
     @include breakpoint.media-down(md) {

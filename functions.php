@@ -100,3 +100,17 @@
 ////PATTERNS
     // Test Font Sizes and CTA Button Block (Gutenberg pattern)
     require get_template_directory() . "/inc/patterns/test-font-sizes-and-cta-button-block.php";
+
+////TEMP DEBUG
+    add_action('rest_api_init', function(){
+        register_rest_route('debugtmp/v1', '/templates', array(
+            'methods' => 'GET',
+            'callback' => function(){
+                return array(
+                    'theme' => wp_get_theme()->get_stylesheet(),
+                    'templates' => wp_get_theme()->get_page_templates(),
+                );
+            },
+            'permission_callback' => '__return_true',
+        ));
+    });

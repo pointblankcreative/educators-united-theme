@@ -1,175 +1,680 @@
 @use "../variables/breakpoints" as breakpoint;
 @use "../variables/main_colours" as colours;
+@use "../variables/font_style_mixins" as fonts;
 
 /* ============ HERO ============ */
 .PromoHero {
     position: relative;
-    min-height: 100vh;
     width: 100%;
+    min-height: 760px;
+    background-color: #2A1030;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
+    overflow: hidden;
 
-    .container {
-        width: 100%;
+    @include breakpoint.media-down(lg) {
+        min-height: 0;
+        padding-top: 110px;
+    }
+
+    > .container {
+        position: relative;
+        height: 100%;
+        min-height: 760px;
+
+        @include breakpoint.media-down(lg) {
+            min-height: 0;
+        }
+    }
+}
+
+.PromoHeroHost {
+    position: absolute;
+    bottom: 0;
+    left: 4%;
+    z-index: 1;
+    height: 92%;
+    width: auto;
+    max-width: 50%;
+    object-fit: contain;
+    object-position: bottom;
+    pointer-events: none;
+
+    @include breakpoint.media-down(lg) {
+        position: static;
+        display: block;
+        margin: 0 auto;
+        left: auto;
+        height: auto;
+        width: auto;
+        max-width: 70%;
+        max-height: 420px;
     }
 
     @include breakpoint.media-down(md) {
-        min-height: 640px;
+        max-width: 85%;
+        max-height: 320px;
     }
 }
 
 .PromoHeroContent {
-    max-width: 720px;
-    padding: 140px 0 80px 0;
-}
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 640px;
+    text-align: right;
 
-.PromoEyebrow {
-    color: colours.$Secondary;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.PromoHeroTitle {
-    color: colours.$Light !important;
-    font-size: 64px !important;
-    margin-bottom: 16px;
-
-    @include breakpoint.media-down(md) {
-        font-size: 38px !important;
+    @include breakpoint.media-down(lg) {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        text-align: center;
+        padding: 0 20px 40px 20px;
     }
 }
 
-.PromoHeroSubtitle {
+.PromoHeroTitle {
+    @include fonts.comicDisplayFont;
+    color: colours.$Secondary !important;
+    font-size: 50px !important;
+    line-height: 1.15 !important;
+    transform: rotate(-3deg);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+
+    @include breakpoint.media-down(md) {
+        font-size: 28px !important;
+    }
+}
+
+.PromoHeroBadge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: colours.$Primary;
     color: colours.$Light;
-    font-size: 22px;
-    margin-bottom: 32px;
+    padding: 12px 22px 14px 18px;
+    border-radius: 10px 10px 10px 0;
+    transform: rotate(-4deg);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+
+    @include breakpoint.media-down(md) {
+        top: 16px;
+        left: 16px;
+        padding: 8px 16px 10px 14px;
+    }
+}
+
+.PromoHeroBadgeLine1,
+.PromoHeroBadgeLine2 {
+    @include fonts.comicDisplayFont;
+    font-size: 26px;
+    line-height: 1;
 
     @include breakpoint.media-down(md) {
         font-size: 18px;
     }
 }
 
-.PromoHeroButton {
+.PromoHeroBadgeLine1 {
+    color: colours.$Light;
+}
+
+.PromoHeroBadgeLine2 {
+    color: colours.$Secondary;
+}
+
+.PromoHeroBadgeCircle {
+    @include fonts.comicDisplayFont;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: colours.$Secondary;
+    color: colours.$Primary;
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+.PromoHeroLangToggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: colours.$Secondary;
+    color: colours.$Primary;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: default;
+
+    @include breakpoint.media-down(md) {
+        top: 16px;
+        right: 16px;
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+}
+
+.PromoHeroDots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: colours.$Primary;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.PromoHeroDot {
     display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-/* ============ INTRO / HEADLINE SECTION ============ */
-.PromoIntro {
-    padding: 90px 0;
+.PromoHeroDot1 {
+    background: colours.$Secondary;
+}
 
-    @include breakpoint.media-down(md) {
-        padding: 60px 0;
+.PromoHeroDot2 {
+    background: #E86BA6;
+}
+
+.PromoHeroDot3 {
+    background: colours.$Light;
+}
+
+// Fairground chase-light effect: each dot steps through the 3 colours in
+// sequence, staggered so the "lit" bulb appears to travel along the strip.
+// Respects prefers-reduced-motion by falling back to the static colours above.
+@media (prefers-reduced-motion: no-preference) {
+    .PromoHeroDot {
+        animation: PromoHeroDotChase 1.5s steps(1) infinite;
+    }
+
+    @for $i from 1 through 40 {
+        .PromoHeroDot:nth-child(#{$i}) {
+            animation-delay: #{$i * -0.05}s;
+        }
     }
 }
 
-.PromoIntroInner {
-    max-width: 760px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.PromoIntroTitle {
-    margin-bottom: 20px;
-}
-
-.PromoIntroText {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* ============ PANELS ============ */
-.PromoPanels {
-    padding: 0 0 100px 0;
-
-    @include breakpoint.media-down(md) {
-        padding: 0 0 60px 0;
+@keyframes PromoHeroDotChase {
+    0% {
+        background: colours.$Secondary;
+    }
+    34% {
+        background: #E86BA6;
+    }
+    67% {
+        background: colours.$Light;
+    }
+    100% {
+        background: colours.$Secondary;
     }
 }
 
-.PromoPanelsGrid {
+/* ============ TRUE OR FALSE QUIZ SECTION ============ */
+.PromoQuiz {
+    background: colours.$Dark;
+    padding: 80px 0 70px 0;
+
+    @include breakpoint.media-down(md) {
+        padding: 50px 0;
+    }
+}
+
+.PromoQuizIntro {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.PromoQuizIntroText {
+    color: colours.$Light;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint.media-down(md) {
+        font-size: 17px;
+    }
+}
+
+.PromoQuizSparkleBg {
+    position: absolute;
+    color: colours.$Light;
+    opacity: 0.08;
+    z-index: 0;
+
+    @include breakpoint.media-down(lg) {
+        display: none;
+    }
+}
+
+.PromoQuizSparkleBg1 {
+    font-size: 48px;
+    top: -10px;
+    right: 180px;
+}
+
+.PromoQuizSparkleBg2 {
+    font-size: 30px;
+    top: 30px;
+    right: 90px;
+}
+
+.PromoQuizSparkleBg3 {
+    font-size: 60px;
+    top: 60px;
+    right: 10px;
+}
+
+.PromoQuizGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    position: relative;
+    z-index: 1;
 
     @include breakpoint.media-down(lg) {
         grid-template-columns: 1fr;
     }
 }
 
-.PromoPanel {
+.PromoQuizCard {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     width: 100%;
-    background: colours.$Light;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
-    padding: 40px 32px;
+    border: 0;
+    border-radius: 18px;
+    padding: 44px 28px;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover,
     &:focus-visible {
         transform: translateY(-6px);
-        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
-        border-color: colours.$Primary;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
     }
 }
 
-.PromoPanelIcon {
+.PromoQuizCardPurple {
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #522A63;
+}
+
+.PromoQuizCardRust {
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #A94A28;
+}
+
+.PromoQuizCardTeal {
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #1F6B5C;
+}
+
+.PromoQuizCardLabel {
+    @include fonts.comicDisplayFont;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    color: colours.$Secondary;
+    font-size: 32px;
+    line-height: 1.05;
+    transform: rotate(-3deg);
+    margin-bottom: 26px;
+
+    @include breakpoint.media-down(md) {
+        font-size: 26px;
+    }
+}
+
+.PromoQuizCardStar {
+    position: absolute;
+    color: #E86BA6;
+    font-size: 12px;
+}
+
+.PromoQuizCardStarA {
+    top: -6px;
+    left: -18px;
+}
+
+.PromoQuizCardStarB {
+    bottom: -4px;
+    right: -20px;
+}
+
+.PromoQuizCardStatement {
+    color: colours.$Light;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.PromoQuizCaption {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: colours.$Light;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 36px;
+}
+
+/* ============ VIDEO ============ */
+.PromoVideo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+
+    @include breakpoint.media-down(md) {
+        padding: 50px 0;
+    }
+}
+
+.PromoVideoWrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    iframe {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+    }
+}
+
+.PromoVideoPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background: colours.$Dark;
+}
+
+.PromoVideoPlayButton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: colours.$Primary;
+    background: colours.$Secondary;
+    color: colours.$Primary;
+    font-size: 24px;
+    padding-left: 4px;
+}
+
+.PromoVideoPlaceholderLabel {
     color: colours.$Light;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.PromoPanelTitle {
-    display: block;
-    font-size: 21px;
-    font-weight: 700;
-    color: colours.$Dark;
-    margin-bottom: 10px;
-}
-
-.PromoPanelText {
-    display: block;
-    font-size: 15px;
-    color: colours.$Dark;
-    opacity: 0.75;
-    margin-bottom: 20px;
-}
-
-.PromoPanelLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     font-weight: 700;
     font-size: 14px;
-    color: colours.$Primary;
-    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
 
-    i {
-        transition: transform 0.2s ease;
+/* ============ JEOPARDY / STAKES SECTION ============ */
+.JeopardySection {
+    position: relative;
+    min-height: 820px;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint.media-down(md) {
+        min-height: auto;
     }
 }
 
-.PromoPanel:hover .PromoPanelLink i,
-.PromoPanel:focus-visible .PromoPanelLink i {
-    transform: translateX(4px);
+.JeopardyHeadline {
+    color: colours.$Light !important;
+    text-transform: uppercase;
+    font-size: 42px !important;
+    padding-top: 70px;
+    max-width: 900px;
+
+    @include breakpoint.media-down(md) {
+        font-size: 28px !important;
+        padding-top: 40px;
+    }
+}
+
+.JeopardyOverlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.78) 30%, rgba(0, 0, 0, 0.96) 100%);
+    padding: 100px 0 60px 0;
+
+    @include breakpoint.media-down(md) {
+        padding: 60px 0 40px 0;
+    }
+}
+
+.JeopardyLabel {
+    color: colours.$Light;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.JeopardyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @include breakpoint.media-down(lg) {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.JeopardyColumn {
+    color: colours.$Light;
+}
+
+.JeopardyIcon {
+    display: block;
+    color: #ff4fa3;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.JeopardyTitle {
+    color: #f2c94c !important;
+    font-weight: 700;
+    font-size: 21px !important;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.JeopardyRule {
+    border: 0;
+    border-top: 2px solid #3b6fe0;
+    margin: 0 0 16px 0;
+    opacity: 1;
+}
+
+.JeopardyText {
+    color: colours.$Light;
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ============ CLOSING STATEMENT ============ */
+.ClosingStatement {
+    background-color: #3A1212;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    overflow: hidden;
+
+    @include breakpoint.media-down(md) {
+        padding: 60px 0;
+    }
+}
+
+.ClosingStatementLine1 {
+    @include fonts.comicDisplayFont;
+    display: inline-block;
+    color: #F0B92E;
+    font-size: 52px;
+    line-height: 1.1;
+    transform: rotate(-3deg);
+    margin-bottom: 6px;
+
+    @include breakpoint.media-down(md) {
+        font-size: 32px;
+    }
+}
+
+.ClosingStatementLine2 {
+    @include fonts.comicDisplayFont;
+    display: block;
+    color: colours.$Light;
+    font-size: 28px;
+    line-height: 1.3;
+    transform: rotate(-2deg);
+    max-width: 720px;
+    margin-left: 40px;
+
+    @include breakpoint.media-down(md) {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}
+
+/* ============ PAGE FOOTER (custom to this promo page) ============ */
+.PromoFooter {
+    background: colours.$Primary;
+    padding: 40px 0;
+}
+
+.PromoFooterRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.PromoFooterBrand {
+    color: colours.$Light;
+}
+
+.PromoFooterLogo {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.PromoFooterLegal {
+    font-size: 12px;
+    opacity: 0.85;
+    line-height: 1.6;
+
+    a {
+        color: colours.$Light;
+        text-decoration: underline;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.PromoFooterSocials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.PromoFooterSocialIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: colours.$Light;
+    color: colours.$Primary;
+    font-size: 16px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+}
+
+.PromoFooterSparkle {
+    position: relative;
+    width: 90px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.PromoFooterSparkleStar {
+    position: absolute;
+}
+
+.PromoFooterSparkleStarLg {
+    color: #F0B92E;
+    font-size: 34px;
+    top: 10px;
+    left: 25px;
+}
+
+.PromoFooterSparkleStarSm {
+    color: #E86BA6;
+    font-size: 16px;
+    top: 0;
+    left: 60px;
+}
+
+.PromoFooterSparkleStarXs {
+    color: #E86BA6;
+    font-size: 10px;
+    top: 45px;
+    left: 5px;
 }
 
 /* ============ MODALS ============ */
@@ -189,4 +694,25 @@
             margin-bottom: 8px;
         }
     }
+}
+
+.PromoModalQuizStatement {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.PromoModalQuizVerdict {
+    @include fonts.comicDisplayFont;
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.PromoModalQuizVerdictTrue {
+    color: #1F6B5C;
+}
+
+.PromoModalQuizVerdictFalse {
+    color: #A94A28;
 }

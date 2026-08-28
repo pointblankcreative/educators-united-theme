@@ -11,8 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $GLOBALS['theme_editor_colours'] = [
-	'primary'   => '#2f2f77',
-	'secondary' => '#ffa500',
+	'primary'   => '#4A2159',
+	'secondary' => '#F0B92E',
 	'success'   => '#198754',
 	'warning'   => '#FFCC00',
 	'danger'    => '#FF4422',

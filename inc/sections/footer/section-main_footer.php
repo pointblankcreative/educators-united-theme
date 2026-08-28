@@ -6,6 +6,8 @@
     $FooterClosingTag = "/figure";
 
     $SocialMediaBool = false;
+    $FooterLogoSRC = "";
+    $FooterLogoAlt = "";
 
     $FooterLogo = get_field($FooterFieldPreface . "_footer_logo", "options");
     if($FooterLogo){
