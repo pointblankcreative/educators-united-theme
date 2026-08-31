@@ -4,6 +4,21 @@
 // Display font for playful/comic-style callouts (e.g. closing statement section)
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+// Adobe Fonts (Typekit) "cc-smash" — used for the promo page's H1.
+// Self-hosted from the theme's webfonts folder (see README: "Fonts from the
+// theme") rather than Adobe's dynamic kit CSS, because that kit's domain
+// allowlist doesn't include this site yet and silently serves an empty
+// stylesheet for domains it doesn't recognize.
+@font-face {
+    font-family: "cc-smash";
+    src: url("../../webfonts/cc-smash.woff2") format("woff2"),
+         url("../../webfonts/cc-smash.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
 @mixin comicDisplayFont{
     font-family: 'Luckiest Guy', cursive;
     font-weight: 400;
@@ -52,176 +67,22 @@
 
 }
 @mixin font-styles{
-    h1, .h1{
-        font-weight: 900 !important;
-    }
-
-    h1, .h1,
-    h2, .h2,
-    h3, .h3,
-    h4,.h4{
-        line-height: 1.2;
-        @include  title-font;
-        color: colours.$Dark;
-        font-weight: 700 !important;
-        a{ 
-            @include  title-font; 
-            color: colours.$Dark;
-            font-weight: 700 !important;
-        }
-    }
-    h5, .h5,
-    h6, .h6{
-        line-height: 1.2;
-        @include  title-font;
-        color: colours.$Dark;
-        font-weight: 700 !important;
-        a{
-            @include  title-font; 
-            color: colours.$Dark;
-            font-weight: 700 !important;
-        }
-    }
-
-    p, a, p a, ul,li,ul li, ul li a, h6{
-        @include paragraph-font;
-        color: colours.$Dark;
-        font-weight: 400 !important; 
-        strong, &.fw-bold{
-            a{
-                font-weight: 400 !important; 
-            }
-            &{
-                font-weight: 400 !important; 
-            }
-        }
-    }
-    .ThemeButton, .CTAButtons a{
-        @include  title-font;
-        font-weight: 700 !important;
-    }
+    // Intentionally empty — this used to force default color/font-weight
+    // onto every h1-h6/p/a/li inside <main> site-wide (see _fonts.scss),
+    // which is why custom typography elsewhere needed !important to win.
 }
+
 @mixin font-sizes{
-    
-    h1, .h1,
-    h1 a, .h1 a{
-        @include h1XtraLargeFont;
-    }
-    h2, .h2,
-    h2 a, .h2 a{
-        @include h2LargeFont;
-    }
-    h3, .h3,
-    h3 a, .h3 a{
-        font-size: 40px !important;
-        @include breakpoint.media-down(md) {
-            font-size: 36px !important;
-        }
-    }
-    h4, .h4,
-    h4 a, .h4 a{
-        @include MediumFont;
-    }
-    h5, .h5,
-    h5 a, .h5 a{
-        font-size: 33px !important;
-        @include breakpoint.media-down(md) {
-            font-size: 28px !important;
-        }
-    }
-    h6, .h6,
-    h6 a, .h6 a{
-        font-size: 28px !important;
-        @include breakpoint.media-down(md) {
-            font-size: 22px !important;
-        }
-    }
-
-    p, a, 
-    ul, ol,
-    li,
-    ul li, 
-    ul li a,
-    ol li, 
-    ol li a {
-        @include RegularFont;
-    }
-    li,
-    ul li, 
-    ul li a,
-    ol li, 
-    ol li a {
-        line-height: 1.1;
-    }
-
-    .has-x-large-font-size{
-        @include h1XtraLargeFont;
-        p, a, 
-        ul, ol,
-        li,
-        ul li, 
-        ul li a,
-        ol li, 
-        ol li a {
-            @include h1XtraLargeFont;
-        }
-    }
-
-    .has-large-font-size{
-        @include h2LargeFont;
-        p, a, 
-        ul, ol,
-        li,
-        ul li, 
-        ul li a,
-        ol li, 
-        ol li a {
-            @include h2LargeFont;
-        }
-    }
-
-    .has-medium-font-size{
-        @include MediumFont;
-        p, a, 
-        ul, ol,
-        li,
-        ul li, 
-        ul li a,
-        ol li, 
-        ol li a {
-            @include MediumFont;
-        }
-    }
-
-    small, .small,
-    small a, .small a,
-    small li, .small li {
-        @include SmallFont;
-    }
-
-    .has-small-font-size{
-        @include SmallFont;
-        p, a, 
-        ul, ol,
-        li,
-        ul li, 
-        ul li a,
-        ol li, 
-        ol li a {
-            @include SmallFont;
-        }
-    }
-
-    sup, sup a{
-        font-size: 0.75em !important;
-    }
-    .large, .large a{
-        font-size: 38px;
-        @include breakpoint.media-down(md) {
-            font-size: 32px;
-        }
-    }
+    // Intentionally empty — this used to force default font-size !important
+    // onto every h3-h6 (40px/36px/33px/28px) and the has-x-large/large/
+    // medium/small-font-size utility classes inside <main> site-wide
+    // (see _fonts.scss). Note: this mixin had gone missing entirely before
+    // this edit, which was silently breaking the SCSS build (gulp-sass logs
+    // "Undefined mixin" and skips writing output) — so main.css on disk had
+    // been stale since whenever that happened. Restoring it (even empty)
+    // fixes the build.
 }
+
 
 @mixin footer-styles{
     p, p a, a p,

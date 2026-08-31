@@ -2,6 +2,16 @@
 @use "../variables/main_colours" as colours;
 @use "../variables/font_style_mixins" as fonts;
 
+// Body copy font for this page. The special display fonts (cc-smash on the
+// hero H1 / closing statement, Luckiest Guy via fonts.comicDisplayFont) set
+// their own font-family and win over this by specificity, so this only
+// affects the "other copy" — quiz cards, jeopardy section, video, footer, etc.
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.PromoPage {
+    font-family: "Open Sans", sans-serif;
+}
+
 /* ============ HERO ============ */
 .PromoHero {
     position: relative;
@@ -32,11 +42,11 @@
 .PromoHeroHost {
     position: absolute;
     bottom: 0;
-    left: 4%;
+    left: 2%;
     z-index: 1;
-    height: 92%;
+    height: 98%;
     width: auto;
-    max-width: 50%;
+    max-width: 58%;
     object-fit: contain;
     object-position: bottom;
     pointer-events: none;
@@ -64,7 +74,7 @@
     right: 0;
     transform: translateY(-50%);
     z-index: 2;
-    max-width: 640px;
+    max-width: 780px;
     text-align: right;
 
     @include breakpoint.media-down(lg) {
@@ -77,15 +87,16 @@
 }
 
 .PromoHeroTitle {
-    @include fonts.comicDisplayFont;
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400;
     color: colours.$Secondary !important;
-    font-size: 50px !important;
-    line-height: 1.15 !important;
+    font-size: 68px !important;
+    line-height: 1.05 !important;
     transform: rotate(-3deg);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 
     @include breakpoint.media-down(md) {
-        font-size: 28px !important;
+        font-size: 32px !important;
     }
 }
 
@@ -94,54 +105,15 @@
     top: 30px;
     left: 30px;
     z-index: 2;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: colours.$Primary;
-    color: colours.$Light;
-    padding: 12px 22px 14px 18px;
-    border-radius: 10px 10px 10px 0;
-    transform: rotate(-4deg);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
 
     @include breakpoint.media-down(md) {
         top: 16px;
         left: 16px;
-        padding: 8px 16px 10px 14px;
+        width: 110px;
     }
-}
-
-.PromoHeroBadgeLine1,
-.PromoHeroBadgeLine2 {
-    @include fonts.comicDisplayFont;
-    font-size: 26px;
-    line-height: 1;
-
-    @include breakpoint.media-down(md) {
-        font-size: 18px;
-    }
-}
-
-.PromoHeroBadgeLine1 {
-    color: colours.$Light;
-}
-
-.PromoHeroBadgeLine2 {
-    color: colours.$Secondary;
-}
-
-.PromoHeroBadgeCircle {
-    @include fonts.comicDisplayFont;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: colours.$Secondary;
-    color: colours.$Primary;
-    font-size: 12px;
-    margin: 2px 0;
 }
 
 .PromoHeroLangToggle {
@@ -177,7 +149,10 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow: hidden;
     background: colours.$Primary;
     padding: 10px 20px;
     z-index: 1;
@@ -185,51 +160,59 @@
 
 .PromoHeroDot {
     display: inline-block;
-    width: 9px;
-    height: 9px;
+    width: 21px;
+    height: 21px;
     border-radius: 50%;
     flex-shrink: 0;
+
+    @include breakpoint.media-down(lg) {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .PromoHeroDot1 {
-    background: colours.$Secondary;
+    background: #FFCB07;
 }
 
 .PromoHeroDot2 {
-    background: #E86BA6;
+    background: #F7A6AB;
 }
 
 .PromoHeroDot3 {
     background: colours.$Light;
 }
 
-// Fairground chase-light effect: each dot steps through the 3 colours in
-// sequence, staggered so the "lit" bulb appears to travel along the strip.
+// Fairground marquee effect: every dot cycles through 3 colours; neighbouring
+// dots are offset by a third of the cycle so the strip always shows an
+// alternating mix of colours rather than blinking in unison.
 // Respects prefers-reduced-motion by falling back to the static colours above.
 @media (prefers-reduced-motion: no-preference) {
     .PromoHeroDot {
-        animation: PromoHeroDotChase 1.5s steps(1) infinite;
+        animation: PromoHeroDotChase 2s steps(1) infinite;
     }
 
-    @for $i from 1 through 40 {
-        .PromoHeroDot:nth-child(#{$i}) {
-            animation-delay: #{$i * -0.05}s;
-        }
+    .PromoHeroDot:nth-child(3n+2) {
+        animation-delay: -0.667s;
+    }
+
+    .PromoHeroDot:nth-child(3n) {
+        animation-delay: -1.333s;
     }
 }
 
 @keyframes PromoHeroDotChase {
     0% {
-        background: colours.$Secondary;
-    }
-    34% {
-        background: #E86BA6;
-    }
-    67% {
         background: colours.$Light;
     }
+    34% {
+        background: #F7A6AB;
+    }
+    67% {
+        background: #FFCB07;
+    }
     100% {
-        background: colours.$Secondary;
+        background: colours.$Light;
     }
 }
 
@@ -250,10 +233,10 @@
 
 .PromoQuizIntroText {
     color: colours.$Light;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 800;
+    font-size: 24px;
     line-height: 1.5;
-    max-width: 640px;
+    max-width: 685px;
     position: relative;
     z-index: 1;
 
@@ -484,9 +467,9 @@
 .JeopardyLabel {
     color: colours.$Light;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
-    font-size: 15px;
+    font-size: 24px;
     margin-bottom: 30px;
 }
 
@@ -502,36 +485,33 @@
 }
 
 .JeopardyColumn {
+    position: relative;
     color: colours.$Light;
+    padding-top: 24px;
 }
 
 .JeopardyIcon {
-    display: block;
-    color: #ff4fa3;
-    font-size: 20px;
-    margin-bottom: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #E86BA6;
+    font-size: 16px;
 }
 
 .JeopardyTitle {
-    color: #f2c94c !important;
-    font-weight: 700;
-    font-size: 21px !important;
+    color: colours.$Secondary !important;
+    font-weight: 800;
+    font-size: 24px !important;
     line-height: 1.3;
-    margin-bottom: 16px;
-}
-
-.JeopardyRule {
-    border: 0;
-    border-top: 2px solid #3b6fe0;
-    margin: 0 0 16px 0;
-    opacity: 1;
+    margin-bottom: 8px;
 }
 
 .JeopardyText {
     color: colours.$Light;
-    font-size: 15px;
+    font-size: 24px;
     line-height: 1.6;
     opacity: 0.9;
+    font-weight: 400;
 }
 
 /* ============ CLOSING STATEMENT ============ */
@@ -542,6 +522,7 @@
     background-repeat: no-repeat;
     padding: 90px 0;
     overflow: hidden;
+    text-align: center;
 
     @include breakpoint.media-down(md) {
         padding: 60px 0;
@@ -549,7 +530,8 @@
 }
 
 .ClosingStatementLine1 {
-    @include fonts.comicDisplayFont;
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400;
     display: inline-block;
     color: #F0B92E;
     font-size: 52px;
@@ -563,18 +545,18 @@
 }
 
 .ClosingStatementLine2 {
-    @include fonts.comicDisplayFont;
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400;
     display: block;
     color: colours.$Light;
     font-size: 28px;
     line-height: 1.3;
     transform: rotate(-2deg);
     max-width: 720px;
-    margin-left: 40px;
+    margin: 0 auto;
 
     @include breakpoint.media-down(md) {
         font-size: 18px;
-        margin-left: 10px;
     }
 }
 
@@ -679,10 +661,6 @@
 
 /* ============ MODALS ============ */
 .PromoModal {
-    .modal-content {
-        padding: 10px;
-    }
-
     h4 {
         margin-bottom: 0;
     }
@@ -696,23 +674,95 @@
     }
 }
 
-.PromoModalQuizStatement {
-    font-style: italic;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 12px;
+.PromoModalQuiz {
+    .modal-dialog {
+        max-width: min(1000px, 92vw);
+    }
+
+    .modal-content {
+        position: relative;
+        overflow: hidden;
+        border: 0;
+        border-radius: 28px;
+        background-color: #3A1212; // velvet fallback, matches .ClosingStatement
+        background-size: cover;
+        background-position: center;
+        color: colours.$Light;
+    }
+}
+
+.PromoModalQuizCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 2;
+    background: none;
+    border: 0;
+    padding: 8px;
+    line-height: 1;
+    color: colours.$Light;
+    font-size: 20px;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 1;
+    }
+}
+
+.PromoModalQuizBody {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 130px 64px 110px;
+
+    @include breakpoint.media-down(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 56px 28px 40px;
+    }
 }
 
 .PromoModalQuizVerdict {
-    @include fonts.comicDisplayFont;
-    font-size: 30px;
-    margin-bottom: 16px;
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 72px;
+    line-height: 0.9;
+    margin: 0;
+    flex-shrink: 0;
+    color: colours.$Secondary;
+    transform: rotate(-8deg);
+
+    @include breakpoint.media-down(md) {
+        font-size: 48px;
+    }
 }
 
-.PromoModalQuizVerdictTrue {
-    color: #1F6B5C;
-}
-
+// Verdict color is intentionally the same gold for True and False (matches
+// the reference design, which uses the brand gold for the verdict word
+// regardless of answer — the card colors already carry the true/false cue).
+.PromoModalQuizVerdictTrue,
 .PromoModalQuizVerdictFalse {
-    color: #A94A28;
+    color: colours.$Secondary;
+}
+
+.PromoModalQuizText {
+    p {
+        margin: 0 0 12px 0;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 1.5;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.PromoModalQuizStatement {
+    font-style: italic;
+    font-size: 20px;
 }

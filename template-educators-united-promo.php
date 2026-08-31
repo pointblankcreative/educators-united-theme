@@ -18,7 +18,18 @@
     $StickAlertBool = "";
     $HasBanner = "NoBannerClass"; // we render our own hero below, skip the default banner
 
-    include_once('header.php');
+    // NOTE: We intentionally don't include header.php here. This page has its
+    // own custom hero (with its own logo badge/nav-free design) and doesn't
+    // use the theme's default site header/nav bar. This mirrors the same
+    // per-page approach already used for the footer below. Other pages are
+    // unaffected — header.php itself is untouched.
+    include get_stylesheet_directory() . '/inc/sections/scripts/section-header-footer-scripts.php';
+    get_template_part( 'inc/headers/header', 'main' );
+    ?>
+    </head>
+    <body id="BodyID" class="preload">
+    <?php wp_body_open(); ?>
+    <?php
 
     $PageTitle = get_the_title();
 
@@ -30,32 +41,34 @@
         $HeroImageURL = get_template_directory_uri() . '/images/promo/curtain-bg.png';
     }
 
-    $HeroHostCutoutURL = get_template_directory_uri() . '/images/promo/host-cutout.png';
+    $HeroHostCutoutURL = get_template_directory_uri() . '/images/promo/host-cutout-trimmed.png';
 ?>
-<main id="Main">
+<main id="Main" class="PromoPage">
 
     <!-- ============ HERO ============ -->
     <section class="PromoHero" style="background-image: linear-gradient(180deg, rgba(20,10,20,0.1) 0%, rgba(20,10,20,0.35) 100%), url('<?php echo esc_url( $HeroImageURL ); ?>');">
 
-        <span class="PromoHeroBadge">
-            <span class="PromoHeroBadgeLine1">Not</span>
-            <span class="PromoHeroBadgeCircle">a</span>
-            <span class="PromoHeroBadgeLine2">Game</span>
-        </span>
+        <img class="PromoHeroBadge" src="<?php echo esc_url( get_template_directory_uri() . '/images/promo/notagame-en-trimmed.png' ); ?>" alt="Not a Game">
 
         <!-- Visual placeholder only; will link to the French version once WPML is installed -->
         <span class="PromoHeroLangToggle" aria-label="French">FR</span>
 
-        <img class="PromoHeroHost" src="<?php echo esc_url( $HeroHostCutoutURL ); ?>" alt="A game show host in a purple suit, pointing at the viewer.">
-
         <div class="container">
+            <img class="PromoHeroHost" src="<?php echo esc_url( $HeroHostCutoutURL ); ?>" alt="A game show host in a purple suit, pointing at the viewer.">
+
             <div class="PromoHeroContent">
                 <h1 class="PromoHeroTitle">Are you smarter<br>than the Ontario<br>Government?</h1>
             </div>
         </div>
 
         <div class="PromoHeroDots" aria-hidden="true">
-            <?php for ( $i = 0; $i < 40; $i++ ) : ?>
+            <?php
+                // Render more dots than any browser width could need at a fixed
+                // size + gap (see .PromoHeroDots in SCSS); CSS overflow:hidden
+                // clips the extras, so the visible count grows/shrinks with the
+                // viewport instead of being a fixed number.
+                for ( $i = 0; $i < 200; $i++ ) :
+            ?>
                 <span class="PromoHeroDot PromoHeroDot<?php echo esc_attr( ( $i % 3 ) + 1 ); ?>"></span>
             <?php endfor; ?>
         </div>
@@ -66,9 +79,7 @@
         <div class="container">
             <div class="PromoQuizIntro">
                 <p class="PromoQuizIntroText">
-                    When it comes to publicly-funded education, Ontario&rsquo;s government has
-                    the answers all wrong. Think you can do any better? Now&rsquo;s your chance
-                    to find out.
+                When it comes to publicly-funded education, Ontario's government has the answers all wrong. Think you can do any better? Now’s your chance to find out.
                 </p>
                 <i class="fas fa-asterisk PromoQuizSparkleBg PromoQuizSparkleBg1" aria-hidden="true"></i>
                 <i class="fas fa-asterisk PromoQuizSparkleBg PromoQuizSparkleBg2" aria-hidden="true"></i>
@@ -141,23 +152,20 @@
                 <div class="JeopardyGrid">
 
                     <div class="JeopardyColumn">
-                        <span class="JeopardyIcon"><i class="fas fa-star" aria-hidden="true"></i></span>
+                        <span class="JeopardyIcon"><i class="fas fa-asterisk" aria-hidden="true"></i></span>
                         <h3 class="JeopardyTitle">Overcrowded and increasingly complex classrooms</h3>
-                        <hr class="JeopardyRule">
                         <p class="JeopardyText">It&rsquo;s hard to balance a class of 30+ while supporting individual needs.</p>
                     </div>
 
                     <div class="JeopardyColumn">
-                        <span class="JeopardyIcon"><i class="fas fa-star" aria-hidden="true"></i></span>
+                        <span class="JeopardyIcon"><i class="fas fa-asterisk" aria-hidden="true"></i></span>
                         <h3 class="JeopardyTitle">Underresourced schools</h3>
-                        <hr class="JeopardyRule">
                         <p class="JeopardyText">Between cancelled classes, shuttered programs, and insufficient school supplies, students are losing access to the things they need to thrive.</p>
                     </div>
 
                     <div class="JeopardyColumn">
-                        <span class="JeopardyIcon"><i class="fas fa-star" aria-hidden="true"></i></span>
+                        <span class="JeopardyIcon"><i class="fas fa-asterisk" aria-hidden="true"></i></span>
                         <h3 class="JeopardyTitle">Short staffing</h3>
-                        <hr class="JeopardyRule">
                         <p class="JeopardyText">Schools do not have enough staff to meet the needs of every student, as government underfunding leaves vulnerable kids behind.</p>
                     </div>
 
@@ -168,22 +176,21 @@
 
     <!-- ============ MODALS ============ -->
 
+    <?php $ModalVelvetURL = get_template_directory_uri() . '/images/promo/velvet-bg.jpg'; ?>
+
     <div class="modal fade PromoModal PromoModalQuiz" id="PromoModalQuiz1" tabindex="-1" aria-labelledby="PromoModalQuiz1Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="ButtonClose" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fas fa-times"></i>
-                        </button>
+            <div class="modal-content" style="background-image: linear-gradient(135deg, rgba(30,8,8,0.35) 0%, rgba(58,18,18,0.55) 100%), url('<?php echo esc_url( $ModalVelvetURL ); ?>');">
+                <button type="button" class="PromoModalQuizCloseBtn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <div class="modal-body PromoModalQuizBody">
+                    <p class="PromoModalQuizVerdict PromoModalQuizVerdictFalse" id="PromoModalQuiz1Label">False</p>
+                    <div class="PromoModalQuizText">
+                        <p>
+                        Educators are dedicated to their students. These are the people you trust to care for students, protect their best interests, and prepare them for their futures. Their top priority is ensuring schools are safe, supportive, and well-resourced.
+                        </p>
                     </div>
-                    <p class="PromoModalQuizStatement" id="PromoModalQuiz1Label">&ldquo;Educators are in it for themselves.&rdquo;</p>
-                    <p class="PromoModalQuizVerdict PromoModalQuizVerdictFalse">False</p>
-                    <p>
-                        Educators show up every day for far more than a paycheque &mdash;
-                        buying their own classroom supplies, staying late, and going the extra
-                        mile because they care about students&rsquo; success, not personal gain.
-                    </p>
                 </div>
             </div>
         </div>
@@ -191,20 +198,20 @@
 
     <div class="modal fade PromoModal PromoModalQuiz" id="PromoModalQuiz2" tabindex="-1" aria-labelledby="PromoModalQuiz2Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="ButtonClose" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <p class="PromoModalQuizStatement" id="PromoModalQuiz2Label">&ldquo;The Ontario Government is investing more than ever in publicly-funded education.&rdquo;</p>
+            <div class="modal-content" style="background-image: linear-gradient(135deg, rgba(30,8,8,0.35) 0%, rgba(58,18,18,0.55) 100%), url('<?php echo esc_url( $ModalVelvetURL ); ?>');">
+                <button type="button" class="PromoModalQuizCloseBtn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <div class="modal-body PromoModalQuizBody">
                     <p class="PromoModalQuizVerdict PromoModalQuizVerdictFalse">False</p>
-                    <p>
-                        Once adjusted for inflation and enrollment growth, real per-student
-                        funding has failed to keep pace &mdash; leaving schools with less to
-                        work with than in previous years, not more.
-                    </p>
+                    <div class="PromoModalQuizText">
+                        <p class="PromoModalQuizStatement" id="PromoModalQuiz2Label">&ldquo;The Ontario Government is investing more than ever in publicly-funded education.&rdquo;</p>
+                        <p>
+                            Once adjusted for inflation and enrollment growth, real per-student
+                            funding has failed to keep pace &mdash; leaving schools with less to
+                            work with than in previous years, not more.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,20 +219,20 @@
 
     <div class="modal fade PromoModal PromoModalQuiz" id="PromoModalQuiz3" tabindex="-1" aria-labelledby="PromoModalQuiz3Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="ButtonClose" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <p class="PromoModalQuizStatement" id="PromoModalQuiz3Label">&ldquo;Everyone should care about Ontario&rsquo;s students.&rdquo;</p>
+            <div class="modal-content" style="background-image: linear-gradient(135deg, rgba(30,8,8,0.35) 0%, rgba(58,18,18,0.55) 100%), url('<?php echo esc_url( $ModalVelvetURL ); ?>');">
+                <button type="button" class="PromoModalQuizCloseBtn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <div class="modal-body PromoModalQuizBody">
                     <p class="PromoModalQuizVerdict PromoModalQuizVerdictTrue">True</p>
-                    <p>
-                        Every student who is well-supported grows into a more capable, engaged
-                        member of society. Strong public education benefits the whole province
-                        &mdash; not just families with kids in school.
-                    </p>
+                    <div class="PromoModalQuizText">
+                        <p class="PromoModalQuizStatement" id="PromoModalQuiz3Label">&ldquo;Everyone should care about Ontario&rsquo;s students.&rdquo;</p>
+                        <p>
+                            Every student who is well-supported grows into a more capable, engaged
+                            member of society. Strong public education benefits the whole province
+                            &mdash; not just families with kids in school.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
