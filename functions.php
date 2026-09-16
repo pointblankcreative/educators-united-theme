@@ -37,6 +37,15 @@
     //get_acf_link_elements
     require get_template_directory() . "/inc/functions/get_acf_link_elements.php";
 
+    //eu_promo_t - WPML String Translation helper for the promo page's hardcoded copy
+    require get_template_directory() . "/inc/functions/eu_promo_translate_string.php";
+
+    //eu_promo_field - ACF field getter (with fallback) for the promo page's ACF-editable content
+    require get_template_directory() . "/inc/functions/eu_promo_field.php";
+
+    //Google Tag Manager <noscript> tag, output via wp_body_open (site-wide; GTM's <script> is in inc/headers/header-main.php)
+    require get_template_directory() . "/inc/functions/google_tag_manager_noscript.php";
+
 ///THEME SETUP
     //ACF Custom Blocks
     require get_template_directory() . "/inc/theme_setup/acf_custom_blocks.php";

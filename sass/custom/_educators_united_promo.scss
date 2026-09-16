@@ -25,7 +25,6 @@
 
     @include breakpoint.media-down(lg) {
         min-height: 0;
-        padding-top: 110px;
     }
 
     > .container {
@@ -35,68 +34,120 @@
 
         @include breakpoint.media-down(lg) {
             min-height: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
 
 .PromoHeroHost {
     position: absolute;
-    bottom: 0;
-    left: 2%;
+    bottom: -34%;
+    right: -7%;
     z-index: 1;
-    height: 98%;
-    width: auto;
-    max-width: 58%;
+    // height: 115%;
+    // width: auto;
+    max-width: 880px;
+    width: 75%;
     object-fit: contain;
     object-position: bottom;
     pointer-events: none;
 
+    // Mobile: full-bleed image at the top of the hero, with the headline
+    // overlaid on top of it (see .PromoHeroContent) instead of stacked
+    // below it in normal flow.
     @include breakpoint.media-down(lg) {
-        position: static;
+        position: relative;
         display: block;
-        margin: 0 auto;
-        left: auto;
+        margin: 0;
+        left: -30px;
+        bottom: auto;
         height: auto;
-        width: auto;
-        max-width: 70%;
-        max-height: 420px;
-    }
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        padding-top: 120px;
 
-    @include breakpoint.media-down(md) {
-        max-width: 85%;
-        max-height: 320px;
     }
 }
 
 .PromoHeroContent {
     position: absolute;
     top: 50%;
-    right: 0;
+    left: 10%;
     transform: translateY(-50%);
     z-index: 2;
     max-width: 780px;
-    text-align: right;
+    text-align: left;
 
+    // Mobile: pinned over the bottom of the host image with a dark gradient
+    // behind the text so it stays legible over the photo. Stops above the
+    // dot strip (41px: 21px dot + 10px top/bottom padding, see
+    // .PromoHeroDots/.PromoHeroDot) instead of running bottom:0, so the
+    // gradient doesn't paint over/darken the dots sitting below it.
     @include breakpoint.media-down(lg) {
-        position: static;
+        position: absolute;
+        top: auto;
+        bottom: 41px;
+        left: 0;
+        right: 0;
         transform: none;
         max-width: 100%;
         text-align: center;
-        padding: 0 20px 40px 20px;
+        padding: 130px 24px 26px 24px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0) 100%);
     }
 }
 
 .PromoHeroTitle {
     font-family: "cc-smash", sans-serif;
-    font-weight: 400;
+    font-weight: 400 !important;
     color: colours.$Secondary !important;
-    font-size: 68px !important;
-    line-height: 1.05 !important;
-    transform: rotate(-3deg);
+    font-size: 75px !important;
+    line-height: 1.00 !important;
+    transform: rotate(-9deg);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    top: 100px;
+
+    @include breakpoint.media-down(lg) {
+        text-align: center;
+        // transform: none;
+        position: static;
+        top: auto;
+    }
 
     @include breakpoint.media-down(md) {
         font-size: 32px !important;
+    }
+
+    // Line breaks differ by breakpoint: desktop reads "Are you / smarter than
+    // / the Ontario / Government?", mobile reads "Are you smarter / than the
+    // Ontario / Government?" — both share the markup, CSS toggles which <br>s render.
+    .PromoHeroTitleBreak--mobile {
+        display: none;
+    }
+
+    @include breakpoint.media-down(lg) {
+        .PromoHeroTitleBreak--desktop {
+            display: none;
+        }
+
+        .PromoHeroTitleBreak--mobile {
+            display: inline;
+        }
+    }
+}
+
+// Between the mobile breakpoint and 1400px, the container narrows enough
+// that the full 75px headline can run into the host photo (most visible on
+// the FR headline, which is longer and wraps to 4 lines — but applied to
+// both languages for consistency). Above 1400px the container is wide
+// enough that it clears the image at full size.
+.PromoHeroTitle {
+    @include breakpoint.media-between(lg, xxl) {
+        font-size: 48px !important;
     }
 }
 
@@ -128,10 +179,16 @@
     height: 42px;
     border-radius: 50%;
     background: colours.$Secondary;
-    color: colours.$Primary;
+    color: colours.$Primary !important;
     font-weight: 800;
     font-size: 14px;
-    cursor: default;
+    text-decoration: none !important;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 0.85;
+    }
 
     @include breakpoint.media-down(md) {
         top: 16px;
@@ -154,7 +211,7 @@
     gap: 6px;
     overflow: hidden;
     background: colours.$Primary;
-    padding: 10px 20px;
+    padding: 10px 10px;
     z-index: 1;
 }
 
@@ -164,11 +221,6 @@
     height: 21px;
     border-radius: 50%;
     flex-shrink: 0;
-
-    @include breakpoint.media-down(lg) {
-        width: 10px;
-        height: 10px;
-    }
 }
 
 .PromoHeroDot1 {
@@ -189,15 +241,16 @@
 // Respects prefers-reduced-motion by falling back to the static colours above.
 @media (prefers-reduced-motion: no-preference) {
     .PromoHeroDot {
-        animation: PromoHeroDotChase 2s steps(1) infinite;
+        // 30% faster than the original 2s cycle.
+        animation: PromoHeroDotChase 1.4s steps(1) infinite;
     }
 
     .PromoHeroDot:nth-child(3n+2) {
-        animation-delay: -0.667s;
+        animation-delay: -0.467s;
     }
 
     .PromoHeroDot:nth-child(3n) {
-        animation-delay: -1.333s;
+        animation-delay: -0.933s;
     }
 }
 
@@ -216,19 +269,39 @@
     }
 }
 
+// Copy of the dot strip placed under the video section, in normal document
+// flow instead of pinned absolute to the bottom of the hero.
+.PromoVideoDots {
+    position: static;
+}
+
 /* ============ TRUE OR FALSE QUIZ SECTION ============ */
 .PromoQuiz {
     background: colours.$Dark;
-    padding: 80px 0 70px 0;
+    padding: 80px 0 20px 0;
 
     @include breakpoint.media-down(md) {
         padding: 50px 0;
+    }
+
+    // Mobile: reorder intro copy / caption / cards via flex so "Click for
+    // the Answer" sits above the cards instead of below them, without
+    // duplicating the markup (see order values on each child below).
+    > .container {
+        @include breakpoint.media-down(lg) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
 .PromoQuizIntro {
     position: relative;
     margin-bottom: 50px;
+
+    @include breakpoint.media-down(lg) {
+        order: 1;
+    }
 }
 
 .PromoQuizIntroText {
@@ -247,31 +320,16 @@
 
 .PromoQuizSparkleBg {
     position: absolute;
-    color: colours.$Light;
-    opacity: 0.08;
+    top: -20px;
+    right: 0;
+    width: 260px;
+    height: auto;
     z-index: 0;
+    pointer-events: none;
 
     @include breakpoint.media-down(lg) {
         display: none;
     }
-}
-
-.PromoQuizSparkleBg1 {
-    font-size: 48px;
-    top: -10px;
-    right: 180px;
-}
-
-.PromoQuizSparkleBg2 {
-    font-size: 30px;
-    top: 30px;
-    right: 90px;
-}
-
-.PromoQuizSparkleBg3 {
-    font-size: 60px;
-    top: 60px;
-    right: 10px;
 }
 
 .PromoQuizGrid {
@@ -283,6 +341,7 @@
 
     @include breakpoint.media-down(lg) {
         grid-template-columns: 1fr;
+        order: 3;
     }
 }
 
@@ -306,54 +365,60 @@
 }
 
 .PromoQuizCardPurple {
-    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #522A63;
+    background-color: #522A63;
+    background-image: url("../../images/promo/PurpleTile_Long.png");
 }
 
 .PromoQuizCardRust {
-    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #A94A28;
+    background-color: #A94A28;
+    background-image: url("../../images/promo/RedTile_Long.png");
 }
 
 .PromoQuizCardTeal {
-    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%), #1F6B5C;
+    background-color: #1F6B5C;
+    background-image: url("../../images/promo/TealTile_Long.png");
 }
 
-.PromoQuizCardLabel {
+.PromoQuizCardPurple,
+.PromoQuizCardRust,
+.PromoQuizCardTeal {
+    background-size: cover;
+    background-position: center;
+}
+
+.PromoQuizCardLabelImg {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+
+    @include breakpoint.media-down(md) {
+        width: 140px;
+    }
+}
+
+// Text fallback for the quiz card label, used on the temporary FR page
+// (template-educators-united-promo-fr.php) since TrueOrFalse.png only
+// exists in English. Swap back to an <img> once a French graphic exists.
+.PromoQuizCardLabelText {
     @include fonts.comicDisplayFont;
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
+    display: block;
     color: colours.$Secondary;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.05;
     transform: rotate(-3deg);
     margin-bottom: 26px;
 
     @include breakpoint.media-down(md) {
-        font-size: 26px;
+        font-size: 22px;
     }
-}
-
-.PromoQuizCardStar {
-    position: absolute;
-    color: #E86BA6;
-    font-size: 12px;
-}
-
-.PromoQuizCardStarA {
-    top: -6px;
-    left: -18px;
-}
-
-.PromoQuizCardStarB {
-    bottom: -4px;
-    right: -20px;
 }
 
 .PromoQuizCardStatement {
     color: colours.$Light;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 1.4;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
 }
 
 .PromoQuizCaption {
@@ -362,8 +427,18 @@
     letter-spacing: 1px;
     color: colours.$Light;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 18px;
     margin-top: 36px;
+
+    // Mobile: sits above the cards instead of below them (order:2, between
+    // the intro copy at order:1 and the cards at order:3 — see .PromoQuiz
+    // > .container), so the margins flip to give it breathing room above
+    // the cards instead of below them.
+    @include breakpoint.media-down(lg) {
+        order: 2;
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
 }
 
 /* ============ VIDEO ============ */
@@ -403,6 +478,10 @@
     background: colours.$Dark;
 }
 
+// Not currently used — the placeholder now shows the countdown below
+// instead of a play button, since there's no video yet to play. Left in
+// place in case a "play button over a thumbnail" treatment is wanted again
+// once the real video is ready.
 .PromoVideoPlayButton {
     display: inline-flex;
     align-items: center;
@@ -425,14 +504,73 @@
     opacity: 0.8;
 }
 
+// "Video launching in" countdown — client-requested stopgap for the launch
+// date (see .PromoVideoCountdown markup in the video section of each promo
+// template, and js/max/promo_countdown/promo_countdown.js for the timer).
+.PromoVideoCountdownIntro {
+    color: colours.$Light;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.PromoVideoCountdownGrid {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include breakpoint.media-down(sm) {
+        gap: 10px;
+    }
+}
+
+.PromoVideoCountdownUnit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 64px;
+    padding: 12px 8px;
+    border-radius: 12px;
+    background: colours.$Primary;
+
+    @include breakpoint.media-down(sm) {
+        min-width: 50px;
+        padding: 10px 6px;
+    }
+}
+
+.PromoVideoCountdownNumber {
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1;
+    color: colours.$Secondary;
+
+    @include breakpoint.media-down(sm) {
+        font-size: 28px;
+    }
+}
+
+.PromoVideoCountdownLabel {
+    color: colours.$Light;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
 /* ============ JEOPARDY / STAKES SECTION ============ */
 .JeopardySection {
     position: relative;
     min-height: 820px;
-    background-color: #000;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #000; // the photo band (below) is a fixed-height
+                             // element, not the whole section — this shows
+                             // through everywhere past it, so the "Students
+                             // are facing" list sits on solid black.
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -442,25 +580,144 @@
     }
 }
 
+// A real, separate element for the photo (not a CSS background-image on the
+// section) so object-fit:cover can crop it to the fixed band height without
+// distorting/stretching it — a background-size trick with a fixed pixel
+// height was warping the image.
+.JeopardyPhotoBand {
+    position: relative;
+    height: 100vh;
+        // max-height: 900px;
+    overflow: hidden;
+
+    // Mobile: the band is taller than just the photo — a solid black strip
+    // (JeopardyPhotoBand's own background, exposed above the image since the
+    // image is offset down to start below it — see .JeopardyPhotoBandImg)
+    // reserves room for the headline so it doesn't sit on top of the photo.
+    // 62px = the 52px reserve, 20% bigger (which was itself the 104px
+    // reserve, 50% smaller — which was itself the original 130px, 20%
+    // smaller).
+    @include breakpoint.media-down(md) {
+        height: 280px + 62px;
+        background: #000;
+    }
+}
+
+.JeopardyPhotoBandImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // 7% ≈ 100px of the 1436px-tall source photos (SET6.png/SET7.png) — a
+    // percentage tracks a proportional point in the actual image regardless
+    // of viewport width, unlike a raw px offset (which just shifts the
+    // visible crop window within the container instead of anchoring to a
+    // point in the source photo).
+    object-position: center 7%;
+    z-index: 0;
+
+    // Pushed down below the reserved black strip (see .JeopardyPhotoBand)
+    // instead of filling the whole band like it does on desktop.
+    @include breakpoint.media-down(md) {
+        top: 62px;
+        height: 280px;
+    }
+}
+
+// Vignette across the top of the band — matrix(-1,0,0,-1,0,0) flips the
+// gradient 180deg (both axes) so it reads darkest at the bottom, lightest
+// at the top, before it's multiplied onto the photo.
+.JeopardyPhotoBandTopFade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 201px;
+    z-index: 1;
+    transform: matrix(-1, 0, 0, -1, 0, 0);
+    background: transparent linear-gradient(179deg, #FFFFFF 0%, #FFFFFF 0%, #DEDEDE 44%, #000000 100%) 0% 0% no-repeat padding-box;
+    mix-blend-mode: multiply;
+    opacity: 1;
+
+    // Mobile: repurposed as the seam blend between the reserved black band
+    // and the photo below it (see .JeopardyPhotoBand/.JeopardyPhotoBandImg)
+    // instead of the desktop vignette above. A plain solid-black-to-
+    // transparent fade, positioned to start exactly where the image starts,
+    // reads more reliably as "smooth transition" than the desktop's
+    // multiply-based vignette would at this shorter distance.
+    @include breakpoint.media-down(md) {
+        top: 62px;
+        height: 60px;
+        transform: none;
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        mix-blend-mode: normal;
+    }
+}
+
+// FR mobile: the reserved black band needs to be 30% bigger than the shared
+// EN/FR value above (62px -> 81px) — the FR headline runs longer, so it
+// needs more room. Scoped to .PromoPageFR (set on the FR template's <main>)
+// rather than changing the shared value, since EN doesn't need this.
+.PromoPageFR {
+    @include breakpoint.media-down(md) {
+        .JeopardyPhotoBand {
+            height: 280px + 81px;
+        }
+
+        .JeopardyPhotoBandImg {
+            top: 81px;
+        }
+
+        .JeopardyPhotoBandTopFade {
+            top: 81px;
+        }
+    }
+}
+
+// Fades the photo into the section's solid black background — just the
+// bottom 100px of the band, not the whole thing, so it never touches (or
+// affects the sizing of) the image itself.
+.JeopardyPhotoBandFade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
 .JeopardyHeadline {
-    color: colours.$Light !important;
-    text-transform: uppercase;
-    font-size: 42px !important;
+    position: relative;
+    z-index: 3;
+    font-family: "cc-smash", sans-serif;
+    font-weight: 400 !important;
+    color: colours.$Secondary !important;
+    text-transform: none;
+    font-size: 56px !important;
+    line-height: 1.05 !important;
+    transform: rotate(-5deg);
     padding-top: 70px;
     max-width: 900px;
+    text-align: center;
+        display: inline-block;
 
     @include breakpoint.media-down(md) {
         font-size: 28px !important;
-        padding-top: 40px;
+        padding-top: 25px;
     }
 }
 
 .JeopardyOverlay {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.78) 30%, rgba(0, 0, 0, 0.96) 100%);
-    padding: 100px 0 60px 0;
+    // No background of its own — it sits below the photo band on
+    // .JeopardySection's solid black background (see above).
+    padding: 0px 0 60px 0;
+    z-index: 2;
+    margin-top: -13px;
 
     @include breakpoint.media-down(md) {
-        padding: 60px 0 40px 0;
+        padding: 30px 0 40px 0;
     }
 }
 
@@ -471,6 +728,10 @@
     letter-spacing: 1px;
     font-size: 24px;
     margin-bottom: 30px;
+    @include breakpoint.media-down(lg) {
+        font-size: 18px;
+        margin-bottom: 0px;
+        }
 }
 
 .JeopardyGrid {
@@ -480,30 +741,58 @@
 
     @include breakpoint.media-down(lg) {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0px;
     }
 }
 
 .JeopardyColumn {
     position: relative;
     color: colours.$Light;
-    padding-top: 24px;
+    padding-top: 34px;
+
+    // On mobile the grid collapses to one narrow column (see .JeopardyGrid),
+    // so the icon needs a smaller/less negative offset than the desktop
+    // value — otherwise it crowds or clips past the edge of the screen.
+    @include breakpoint.media-down(lg) {
+        padding-top: 46px;
+        padding-left: 10px;
+    }
 }
 
 .JeopardyIcon {
     position: absolute;
-    top: 0;
-    left: 0;
-    color: #E86BA6;
-    font-size: 16px;
+    top: -14px;
+    left: -50px;
+
+    @include breakpoint.media-down(lg) {
+        top: 16px;
+            left: -24px;
+    }
+
+    img {
+        display: block;
+        width: 64px;
+        height: auto;
+
+        @include breakpoint.media-down(lg) {
+            width: 56px;
+        }
+
+        @include breakpoint.media-down(md) {
+            width: 48px;
+        }
+    }
 }
 
 .JeopardyTitle {
     color: colours.$Secondary !important;
     font-weight: 800;
-    font-size: 24px !important;
+    font-size: 24px;
     line-height: 1.3;
     margin-bottom: 8px;
+    @include breakpoint.media-down(lg) {
+        font-size: 18px;
+        }
 }
 
 .JeopardyText {
@@ -512,6 +801,9 @@
     line-height: 1.6;
     opacity: 0.9;
     font-weight: 400;
+    @include breakpoint.media-down(lg) {
+            font-size: 18px;
+        }
 }
 
 /* ============ CLOSING STATEMENT ============ */
@@ -534,13 +826,22 @@
     font-weight: 400;
     display: inline-block;
     color: #F0B92E;
-    font-size: 52px;
+    font-size: 48px;
     line-height: 1.1;
     transform: rotate(-3deg);
     margin-bottom: 6px;
 
     @include breakpoint.media-down(md) {
-        font-size: 32px;
+        font-size: 36px;
+    }
+
+    // Line break after "is" is mobile-only — desktop reads as one line.
+    .ClosingStatementBreak--mobile {
+        display: none;
+
+        @include breakpoint.media-down(md) {
+            display: inline;
+        }
     }
 }
 
@@ -549,14 +850,14 @@
     font-weight: 400;
     display: block;
     color: colours.$Light;
-    font-size: 28px;
+    font-size: 36px;
     line-height: 1.3;
     transform: rotate(-2deg);
     max-width: 720px;
     margin: 0 auto;
 
     @include breakpoint.media-down(md) {
-        font-size: 18px;
+        font-size: 28px;
     }
 }
 
@@ -572,17 +873,35 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
+
+    @include breakpoint.media-down(lg) {
+        gap: 24px;
+    }
 }
 
 .PromoFooterBrand {
     color: colours.$Light;
 }
 
+.PromoFooterLogoBtn {
+    display: block;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 0.85;
+    }
+}
+
 .PromoFooterLogo {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 22px;
-    line-height: 1.1;
+    display: block;
+    width: 160px;
+    height: auto;
     margin-bottom: 10px;
 }
 
@@ -606,6 +925,16 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+
+    // Mobile: socials move to their own centered row above the logo/legal +
+    // sparkle row (matches the mobile design), instead of wrapping below the
+    // logo, left-aligned, as it does on desktop.
+    @include breakpoint.media-down(lg) {
+        order: -1;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
 }
 
 .PromoFooterSocialIcon {
@@ -618,45 +947,28 @@
     background: colours.$Light;
     color: colours.$Primary;
     font-size: 16px;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover,
     &:focus-visible {
-        opacity: 0.85;
+        background: colours.$Secondary;
+        color: colours.$Primary;
         transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    }
+
+    &:focus-visible {
+        outline: 2px solid colours.$Light;
+        outline-offset: 2px;
     }
 }
 
 .PromoFooterSparkle {
-    position: relative;
+    display: block;
     width: 90px;
-    height: 70px;
+    height: auto;
     flex-shrink: 0;
-}
-
-.PromoFooterSparkleStar {
-    position: absolute;
-}
-
-.PromoFooterSparkleStarLg {
-    color: #F0B92E;
-    font-size: 34px;
-    top: 10px;
-    left: 25px;
-}
-
-.PromoFooterSparkleStarSm {
-    color: #E86BA6;
-    font-size: 16px;
-    top: 0;
-    left: 60px;
-}
-
-.PromoFooterSparkleStarXs {
-    color: #E86BA6;
-    font-size: 10px;
-    top: 45px;
-    left: 5px;
 }
 
 /* ============ MODALS ============ */
@@ -676,7 +988,7 @@
 
 .PromoModalQuiz {
     .modal-dialog {
-        max-width: min(1000px, 92vw);
+        max-width: min(1262px, 92vw);
     }
 
     .modal-content {
@@ -684,24 +996,37 @@
         overflow: hidden;
         border: 0;
         border-radius: 28px;
-        background-color: #3A1212; // velvet fallback, matches .ClosingStatement
+        background-color: #3A1212; // fallback before per-card colour below loads
         background-size: cover;
         background-position: center;
         color: colours.$Light;
     }
 }
 
+// Modal background fallback colours match the quiz panel that opens each
+// modal (.PromoQuizCardPurple/Rust/Teal) — the actual tile image is set
+// inline per-modal in the template, this is just the solid-colour fallback.
+.PromoModalQuizPurple {
+    background-color: #522A63;
+}
+
+.PromoModalQuizRust {
+    background-color: #A94A28;
+}
+
+.PromoModalQuizTeal {
+    background-color: #1F6B5C;
+}
+
 .PromoModalQuizCloseBtn {
     position: absolute;
-    top: 20px;
-    right: 24px;
+    top: 0px;
+    right: 0px;
     z-index: 2;
     background: none;
     border: 0;
     padding: 8px;
     line-height: 1;
-    color: colours.$Light;
-    font-size: 20px;
     opacity: 0.85;
     transition: opacity 0.15s ease;
 
@@ -711,11 +1036,22 @@
     }
 }
 
+.PromoModalQuizCloseIcon {
+    display: block;
+    width: 72px;
+    height: auto;
+    @include breakpoint.media-down(md) {
+        width: 32px;
+    }
+}
+
 .PromoModalQuizBody {
     display: flex;
     align-items: center;
     gap: 48px;
     padding: 130px 64px 110px;
+    justify-content: end;
+
 
     @include breakpoint.media-down(md) {
         flex-direction: column;
@@ -723,6 +1059,10 @@
         gap: 20px;
         padding: 56px 28px 40px;
     }
+}
+
+#PromoModalQuiz2 .PromoModalQuizBody {
+    padding: 76px 64px 65px;
 }
 
 .PromoModalQuizVerdict {
@@ -735,9 +1075,13 @@
     flex-shrink: 0;
     color: colours.$Secondary;
     transform: rotate(-8deg);
+    position: absolute;
+    top: 35px;
+    left: 30px;
 
     @include breakpoint.media-down(md) {
         font-size: 48px;
+        position: initial;
     }
 }
 
@@ -750,6 +1094,10 @@
 }
 
 .PromoModalQuizText {
+    max-width: 74%;
+    @include breakpoint.media-down(md) {
+            max-width: 100%;
+        }
     p {
         margin: 0 0 12px 0;
         font-weight: 700;
@@ -766,3 +1114,117 @@
     font-style: italic;
     font-size: 20px;
 }
+
+/* "About Educators United" modal, opened from the footer logo */
+.PromoModalAbout {
+    .modal-dialog {
+        max-width: min(1100px, 92vw);
+    }
+}
+
+.PromoModalAboutContent {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    border-radius: 28px;
+    background: colours.$Secondary;
+    color: colours.$Primary;
+}
+
+.PromoModalAboutCloseBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    background: none;
+    border: 0;
+    padding: 8px;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 1;
+    }
+}
+
+// Hand-drawn purple X image (PurpleX.png) sits on this modal's light gold
+// background, replacing the plain CSS X previously built from two rotated
+// bars — unlike the white WhiteX.png icon used on the dark quiz modals,
+// this one doesn't need a mask/recolour, it's already brand purple.
+.PromoModalAboutCloseIcon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.PromoModalAboutBody {
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+    padding: 50px 40px;
+
+    @include breakpoint.media-down(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 28px 40px;
+        gap: 32px;
+    }
+}
+
+.PromoModalAboutBrand {
+    position: relative;
+    flex: 0 0 auto;
+    width: 300px;
+
+    @include breakpoint.media-down(md) {
+        width: 220px;
+    }
+}
+
+.PromoModalAboutLogo {
+    // Pre-coloured purple wordmark + icon lockup, supplied as a single
+    // finished asset — no mask/recolour needed like the earlier build.
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 639 / 167;
+}
+
+// FR wordmark ("Ensemble pour l'éducation") — different asset, different
+// native aspect ratio (642×124).
+.PromoModalAboutLogoFR {
+    aspect-ratio: 642 / 124;
+}
+
+.PromoModalAboutText {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: #000;
+
+    p {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.PromoModalAboutDivider {
+    margin: 4px 0 20px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+// Org attribution line, set apart from the main body copy above the divider.
+.PromoModalAboutNote {
+    font-size: 15px !important;
+    line-height: 1.5;
+    opacity: 0.75;
+}
+

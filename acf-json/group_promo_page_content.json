@@ -1,0 +1,901 @@
+{
+    "key": "group_promo_page_content",
+    "title": "Promo Page Content",
+    "fields": [
+        {
+            "key": "field_promo_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_promo_host_image",
+            "label": "Host Cutout Image",
+            "name": "host_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "The game-show host cutout graphic standing in the hero. (The hero headline itself is left out of this field group — its layout is tuned across multiple breakpoints and isn't a good fit for a plain text field.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_tab_quiz",
+            "label": "True or False Quiz",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_promo_quiz_intro_text",
+            "label": "Quiz Intro Text",
+            "name": "quiz_intro_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro paragraph above the three quiz cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "When it comes to publicly funded education, Ontario's government has the answers all wrong. Think you can do any better? Now's your chance to find out.",
+            "maxlength": 220,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_quiz_label_image",
+            "label": "“True or False” Graphic",
+            "name": "quiz_label_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Shown on all three quiz cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_quiz_card_1_statement",
+            "label": "Card 1 Statement",
+            "name": "quiz_card_1_statement",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Purple card statement.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Educators are in it for themselves.",
+            "maxlength": 90,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_quiz_card_2_statement",
+            "label": "Card 2 Statement",
+            "name": "quiz_card_2_statement",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Rust card statement.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The Ontario Government is investing more than ever in publicly funded education?",
+            "maxlength": 90,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_quiz_card_3_statement",
+            "label": "Card 3 Statement",
+            "name": "quiz_card_3_statement",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Teal card statement.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Everyone should care about Ontario's students.",
+            "maxlength": 90,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_tile_purple_image",
+            "label": "Purple Card/Modal Background Tile",
+            "name": "tile_purple_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Used for both Card 1 and its answer modal's background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_tile_rust_image",
+            "label": "Rust Card/Modal Background Tile",
+            "name": "tile_rust_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Used for both Card 2 and its answer modal's background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_tile_teal_image",
+            "label": "Teal Card/Modal Background Tile",
+            "name": "tile_teal_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Used for both Card 3 and its answer modal's background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_modal_1_body",
+            "label": "Card 1 Answer Body",
+            "name": "modal_1_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Text shown in the popup when Card 1 is clicked (verdict: False).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Educators are dedicated to their students. These are the people you trust to care for students, protect their best interests, and prepare them for their futures. Their top priority is ensuring schools are safe, supportive, and well-resourced.",
+            "maxlength": 400,
+            "rows": 5,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_2_body_intro",
+            "label": "Card 2 Answer Intro",
+            "name": "modal_2_body_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Text shown in the popup when Card 2 is clicked (verdict: False), before the bullet list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Despite claims of “historic investments” in education:",
+            "maxlength": 300,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_2_body_li1",
+            "label": "Card 2 Answer — Bullet 1",
+            "name": "modal_2_body_li1",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Basic emphasis is supported: wrap a word in <em>...</em> to italicize it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Schools will actually receive $260 <em>less</em> per student this year compared to 2018-19, once you adjust for inflation and enrollment.",
+            "maxlength": 300,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_2_body_li2",
+            "label": "Card 2 Answer — Bullet 2",
+            "name": "modal_2_body_li2",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "That means $6.5 billion has been stripped from kids' classrooms and their education.",
+            "maxlength": 200,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_2_body_li3",
+            "label": "Card 2 Answer — Bullet 3",
+            "name": "modal_2_body_li3",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Real per-student funding has fallen to its lowest level in a decade, and is projected to continue to decline.",
+            "maxlength": 200,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_2_body_outro",
+            "label": "Card 2 Answer Outro",
+            "name": "modal_2_body_outro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Text shown after the bullet list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "It's clear Ontario's publicly funded schools are seeing less funding than ever. That means crowded classrooms, reduced resources, and less support for students.",
+            "maxlength": 300,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_modal_3_body",
+            "label": "Card 3 Answer Body",
+            "name": "modal_3_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Text shown in the popup when Card 3 is clicked (verdict: True).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Whether you're a parent, caregiver, or concerned citizen, what happens to Ontario's students affects your future! These kids will grow up to be community members and working professionals. They deserve every opportunity to reach their full potential, and so do you! We should all be looking out for one another.",
+            "maxlength": 400,
+            "rows": 5,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_tab_jeopardy",
+            "label": "Jeopardy Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_promo_jeopardy_headline",
+            "label": "Jeopardy Headline",
+            "name": "jeopardy_headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Large headline over the photo band. Note: the default copy has a hand-placed line break tuned to this exact wording — changing the text may reflow the line break oddly on some screen sizes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ontario's future<br>is in jeopardy!",
+            "maxlength": 60,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_jeopardy_bg_image",
+            "label": "Jeopardy Background Photo",
+            "name": "jeopardy_bg_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Full-width photo behind the Jeopardy headline.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_jeopardy_label",
+            "label": "Section Label",
+            "name": "jeopardy_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Students are facing:",
+            "maxlength": 40,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_jeopardy_icon_image",
+            "label": "Jeopardy Column Icon",
+            "name": "jeopardy_icon_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Small icon shown above each of the three column titles below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_jeopardy_col1_title",
+            "label": "Column 1 Title",
+            "name": "jeopardy_col1_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Overcrowded and increasingly complex classrooms",
+            "maxlength": 70,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_jeopardy_col1_text",
+            "label": "Column 1 Text",
+            "name": "jeopardy_col1_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "It's harder for students' individual needs to be met in a class of 30+.",
+            "maxlength": 220,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_jeopardy_col2_title",
+            "label": "Column 2 Title",
+            "name": "jeopardy_col2_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Underresourced schools",
+            "maxlength": 70,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_jeopardy_col2_text",
+            "label": "Column 2 Text",
+            "name": "jeopardy_col2_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Between cancelled classes, shuttered programs, and insufficient school supplies, students are losing access to the things they need to thrive.",
+            "maxlength": 220,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_jeopardy_col3_title",
+            "label": "Column 3 Title",
+            "name": "jeopardy_col3_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Short staffing",
+            "maxlength": 70,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_jeopardy_col3_text",
+            "label": "Column 3 Text",
+            "name": "jeopardy_col3_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Schools do not have enough staff to meet the needs of every student, as government underfunding leaves vulnerable kids behind.",
+            "maxlength": 220,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_tab_about",
+            "label": "About Modal",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_promo_about_logo_image",
+            "label": "About Modal Wordmark Logo",
+            "name": "about_logo_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_promo_about_intro",
+            "label": "Intro Paragraph",
+            "name": "about_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Educators United is a coalition of parents, education workers, teachers, and youth who are concerned about the future of Ontario's students. Though we come from many different backgrounds, our shared purpose is advocacy.",
+            "maxlength": 400,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_about_goal_label",
+            "label": "Goal Label",
+            "name": "about_goal_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our goal is threefold:",
+            "maxlength": 60,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_about_goal_1",
+            "label": "Goal 1",
+            "name": "about_goal_1",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Keep the leading “1. ” to match the visual numbering.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1. To create awareness about the overcrowding, underfunding, and short staffing that impacts our publicly funded schools",
+            "maxlength": 200,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_about_goal_2",
+            "label": "Goal 2",
+            "name": "about_goal_2",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Keep the leading “2. ” to match the visual numbering.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "2. To build understanding that what happens to students affects us all",
+            "maxlength": 150,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_about_goal_3",
+            "label": "Goal 3",
+            "name": "about_goal_3",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Keep the leading “3. ” to match the visual numbering.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "3. To demand the Ontario Government fully resource our public education system",
+            "maxlength": 200,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_about_outro",
+            "label": "Outro Paragraph",
+            "name": "about_outro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ontario's future is in jeopardy, but it doesn't have to be. Join us and spread the word.",
+            "maxlength": 200,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_about_note",
+            "label": "Org Note",
+            "name": "about_note",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ontario Forward is a non-partisan, not-for-profit organization fueled by the support of thousands working to move Ontario towards a brighter future.",
+            "maxlength": 300,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_promo_tab_footer",
+            "label": "Closing Statement & Footer",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_promo_closing_line_1",
+            "label": "Closing Statement — Line 1",
+            "name": "closing_line_1",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "On the English page this has a mobile-only line break after “is”. Keep the wording short. Note: the default copy has a hand-placed line break tuned to this exact wording — changing the text may reflow the line break oddly on some screen sizes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Education is not a game.",
+            "maxlength": 40,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_closing_line_2",
+            "label": "Closing Statement — Line 2",
+            "name": "closing_line_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "It's time the Ontario Government stopped treating it like one.",
+            "maxlength": 90,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_promo_footer_logo_image",
+            "label": "Footer Logo",
+            "name": "footer_logo_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Logo button in the footer; clicking it opens the About modal.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-educators-united-promo.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-educators-united-promo-fr.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editable copy and images for the Not A Game / Pas Un Jeu promo page. Each of the two language pages (English, French) has its own separate set of values — edit each page independently.",
+    "show_in_rest": 0
+}

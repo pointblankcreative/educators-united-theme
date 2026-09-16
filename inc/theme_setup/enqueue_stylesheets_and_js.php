@@ -27,7 +27,15 @@ function load_js() {
     wp_enqueue_script('bootstrap');   
 
     wp_register_script('prevent_animation_when_loading', get_template_directory_uri() . "/js/min/page_load/prevent_animation_when_loading.js", array(), $theme_version);
-    wp_enqueue_script('prevent_animation_when_loading');  
-    
+    wp_enqueue_script('prevent_animation_when_loading');
+
+    // "Video launching in" countdown — only needed on the promo page's two
+    // language templates (see .PromoVideoCountdown in the video section of
+    // each), not site-wide.
+    if ( is_page_template( array( 'template-educators-united-promo.php', 'template-educators-united-promo-fr.php' ) ) ) {
+        wp_register_script('promo_countdown', get_template_directory_uri() . "/js/min/promo_countdown/promo_countdown.js", array(), $theme_version, true);
+        wp_enqueue_script('promo_countdown');
+    }
+
 }
 add_action('wp_enqueue_scripts', 'load_js');

@@ -1,0 +1,87 @@
+@use "../variables/breakpoints" as breakpoint;
+@use "../variables/main_colours" as colours;
+
+// Standalone legal page for the promo campaign (see
+// template-educators-united-privacy.php). Reuses .PromoPage's Open Sans
+// base font and the promo footer's existing classes, but is otherwise its
+// own simple dark/readable layout rather than the campaign's full-bleed
+// sections.
+
+.PrivacyPage {
+    background: colours.$Dark;
+    color: colours.$Light;
+}
+
+.PrivacyTopBar {
+    padding: 24px 30px;
+
+    @include breakpoint.media-down(md) {
+        padding: 16px;
+    }
+}
+
+.PrivacyTopBarBadge {
+    width: 130px;
+    height: auto;
+    display: block;
+
+    @include breakpoint.media-down(md) {
+        width: 100px;
+    }
+}
+
+.PrivacyContent {
+    max-width: 760px;
+    padding: 20px 20px 80px;
+
+    h1 {
+        color: colours.$Secondary;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        color: colours.$Secondary;
+        font-weight: 700;
+        font-size: 22px;
+        margin-top: 48px;
+        margin-bottom: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    p {
+        margin-bottom: 16px;
+    }
+
+    ul {
+        margin: 0 0 16px;
+        padding-left: 22px;
+
+        li {
+            margin-bottom: 8px;
+        }
+    }
+
+    a {
+        color: colours.$Secondary;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus-visible {
+            color: colours.$Light;
+        }
+    }
+}
+
+.PrivacyUpdated {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.PrivacyAddress {
+    font-style: normal;
+}
